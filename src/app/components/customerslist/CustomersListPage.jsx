@@ -1,8 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
+//  Custom Components
+import Page from 'components/common/layout/page';
+import LeftSidebar from 'components/common/layout/leftsidebar';
+import PageContent from 'components/common/layout/pagecontent';
+import LeftSidebarContent from './common/leftsidebarcontent';
+
 const CustomersListPage = () => {  
   return (
-    <h1>CustomersList</h1>
+    <Page>
+      <LeftSidebar>
+        <LeftSidebarContent />
+      </LeftSidebar>
+      <PageContent>
+        <h1>Customers List</h1>
+      </PageContent>
+    </Page>
   );
 };
 

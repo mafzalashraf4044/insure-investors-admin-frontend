@@ -1,6 +1,11 @@
 export const navWidth = '5vw';
 export const navBg = '#101f77';
 
+export const textOverflowEllipsis = `
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+`;
 
 export const flex = `
   display: flex;
@@ -45,4 +50,16 @@ export const flexColumnFsC = `
   ${flexColumn}
   justify-content: flex-start;
   align-items: center;
+`;
+
+export const flexFsFs = `
+  ${flex}
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+export const flexColumnFsFs = `
+  ${flexColumn}
+  justify-content: flex-start;
+  align-items: flex-start;
 `;

@@ -14,7 +14,7 @@ import './styles/index.scss';
 const favIcon = require('assets/images/fav.ico');
 
 ReactDOM.render(
-  <Router history={browserHistory} basename="admin">
+  <Router history={browserHistory}>
     <App />
   </Router>,
   document.getElementById('root'),

@@ -1,0 +1,1 @@
+export const getSizeWrtWidth = (size) => `${size * (window.innerWidth / 1600)}px`;
