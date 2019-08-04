@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Muli';
+    src: url(../assets/fonts/Muli/Muli-Regular.ttf);
+}
+
+@import "../assets/fonts/font-awesome/css/font-awesome.min.css";
+
+* {
+  font-size: 14px;
+  font-family: 'Muli', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// @media(max-width: 991px) {
+
+// }
+
+// @media(min-width: 992px) {
+
+// }

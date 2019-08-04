@@ -9,11 +9,13 @@ import CustomersPage from './customers/CustomersPage';
 import CustomersListPage from './customerslist/CustomersListPage';
 
 //  Custom Components
-import Screen from './common/Screen';
+import Screen from './common/layout/screen';
+import Navbar from './common/layout/navbar';
 
 const App = () => {  
   return (
     <Screen>
+      <Navbar />
       <Switch>
           <Route path='/' exact component={OverviewPage} />
           <Route path='/customers' exact component={CustomersPage} />

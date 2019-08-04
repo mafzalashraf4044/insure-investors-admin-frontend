@@ -9,7 +9,7 @@ import { browserHistory } from 'react-router'
 import App from './components/App';
 
 //  styles
-import './styles.scss';
+import './styles/index.scss';
 
 const favIcon = require('assets/images/fav.ico');
 

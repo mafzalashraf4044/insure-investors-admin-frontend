@@ -25,6 +25,7 @@ module.exports = {
       reducers: path.resolve('src/app/reducers'),
       services: path.resolve('src/app/services'),
       store: path.resolve('src/app/store'),
+      constants: path.resolve('src/app/constants'),
     },
   },
   module: {
