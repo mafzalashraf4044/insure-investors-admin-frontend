@@ -19,21 +19,21 @@ import { faCog, faBell } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
 
   const navItems = [
-    {title: "Dashboard", icon: require('assets/images/icons/dashboard.png')},
-    {title: "Lead", icon: require('assets/images/icons/info.png')},
-    {title: "Customers", icon: require('assets/images/icons/info.png')},
-    {title: "Info", icon: require('assets/images/icons/info.png')},
+    {title: 'Dashboard', to: '/', icon: require('assets/images/icons/dashboard.png')},
+    {title: 'Lead', to: 'customers', icon: require('assets/images/icons/info.png')},
+    {title: 'Customers', to: '/customers-list', icon: require('assets/images/icons/info.png')},
+    {title: 'Info', to: '/info', icon: require('assets/images/icons/info.png')},
   ];
 
   return (
     <Nav>
       <NavItems>
-        <HomeLink href="#">
+        <HomeLink to="/">
           <img src={require('assets/images/icons/home.png')} alt="home icon" />
         </HomeLink>
         {
           navItems.map((navItem, i) => (
-            <NavItem href="#" key={i}>
+            <NavItem to={navItem.to} key={i}>
               <img src={navItem.icon} alt="navigation icon" />
             </NavItem>
           ))
