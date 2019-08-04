@@ -1,9 +1,21 @@
 import React from 'react';
 
-import styles from './styles.css';
+import {
+  LeftSidebar,
+  Scrollbars,
+  ThumbVertical,
+  TrackVertical,
+} from './styled';
 
-const LeftSidebar = () => (
-  <div className={styles.leftSidebar} />
+import Scrollbar from 'components/common/scrollbar';
+
+export default ({children}) => (
+  <LeftSidebar>
+    <Scrollbar
+      thumbColor="#DD238E"
+      height={window.innerHeight}
+    >
+      {children}
+    </Scrollbar>
+  </LeftSidebar>
 );
-
-export default LeftSidebar;

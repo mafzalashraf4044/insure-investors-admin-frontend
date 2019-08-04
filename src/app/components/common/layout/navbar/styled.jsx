@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 //  constants
@@ -22,13 +23,13 @@ export const NavItems = styled.div`
   ${flexColumnFsC}
 `;
 
-export const NavItem = styled.a`
+export const NavItem = styled(Link)`
   ${flexCC}
   width: ${navWidth};
   margin: 15px 0;
 `;
 
-export const HomeLink = styled.a`
+export const HomeLink = styled(Link)`
   ${flexCC}  
   width: ${navWidth};
   height: ${navWidth};

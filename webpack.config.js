@@ -26,6 +26,7 @@ module.exports = {
       services: path.resolve('src/app/services'),
       store: path.resolve('src/app/store'),
       constants: path.resolve('src/app/constants'),
+      utils: path.resolve('src/app/utils'),
     },
   },
   module: {
