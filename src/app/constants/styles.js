@@ -6,10 +6,12 @@ export const navBg = '#101f77';
 
 export const headingFontSize = 28;
 
-export const contentPaddingBottom = 40;
+export const contentPaddingBottom = 50;
 export const contentPaddingHorizontal = 30;
 
 export const headerHeight = (2 * contentPaddingBottom) + headingFontSize;
+
+export const tableHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
 
 export const contentPadding = `
   padding: 0 ${getSizeWrtWidth(contentPaddingHorizontal)} ${getSizeWrtWidth(contentPaddingBottom)} ${getSizeWrtWidth(contentPaddingHorizontal)};

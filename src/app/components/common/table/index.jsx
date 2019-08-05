@@ -7,7 +7,6 @@ import {
   Th,
   TBody,
   Td,
-
 } from './styled';
 
 export default ({columns, data}) => {

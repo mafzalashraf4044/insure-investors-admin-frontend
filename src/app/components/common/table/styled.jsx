@@ -3,14 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 //  utils
 import {getSizeWrtWidth} from 'utils/styles';
-  
-//  constants
-import {
-  headerHeight,
-  flexSbC,
-  flexCC,
-  flexFsC,
-} from 'constants/styles';
 
 export const Table = styled.table`
   width: 100%;

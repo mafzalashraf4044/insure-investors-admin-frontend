@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-//  utils
-import {getSizeWrtWidth} from 'utils/styles';
+//  icons
+import Search from 'components/common/icons/Search';
+import Filter from 'components/common/icons/Filter';
 
 //  constants
 import {
@@ -11,6 +11,9 @@ import {
   flexCC,
   flexFsC,
 } from 'constants/styles';
+
+//  utils
+import {getSizeWrtWidth} from 'utils/styles';
 
 export const Header = styled.div`
   ${flexSbC}
@@ -40,9 +43,13 @@ export const SearchBox = styled.div`
   margin: 0 ${getSizeWrtWidth(15)};
 `;
 
-export const SearchIcon = styled(FontAwesomeIcon)`
-  font-size: ${getSizeWrtWidth(14)};
-  color: #858585;
+export const SearchIcon = styled(Search)`
+  width: ${getSizeWrtWidth(14)};
+  height: ${getSizeWrtWidth(14)};
+
+  path {
+    fill: #858585;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -63,6 +70,7 @@ export const FilterButton = styled.button`
   background-color: rgba(3,16,92,0.050980392156862744);
   border: 1px solid #d5d5d5;
   padding: 0;
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -76,10 +84,15 @@ export const FilterButton = styled.button`
   }
 `;
 
-export const FilterIcon = styled(FontAwesomeIcon)`
-  font-size: ${getSizeWrtWidth(14)};
-  color: #8f8f8f;
+export const FilterIcon = styled(Filter)`
+  width: ${getSizeWrtWidth(14)};
+  height: ${getSizeWrtWidth(14)};
+
+  path {
+    fill: #858585;
+  }
 `;
+
 
 export const HeaderRight = styled.div``;
 
@@ -90,6 +103,7 @@ export const NewCustomerButton = styled.button`
   border-radius: 4px;
   background-color: #dc248d;
   border: none;
+  cursor: pointer;
 
   &:focus {
     outline: none;

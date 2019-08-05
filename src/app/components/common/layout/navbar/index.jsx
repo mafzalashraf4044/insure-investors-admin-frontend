@@ -5,12 +5,16 @@ import {
   Nav,
   NavItems,
   NavItem,
+  DashboardIcon,
+  LeadIcon,
+  CustomersIcon,
+  InfoIcon,
   HomeLink,
   NavBottom,
   ActionButton,
   ActionButtonIcon,
   NotificationLabel,
-  ProfileImage
+  ProfileImage,
 } from './styled';
 
 //  icons
@@ -19,10 +23,10 @@ import { faCog, faBell } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
 
   const navItems = [
-    {title: 'Dashboard', to: '/', icon: require('assets/images/icons/dashboard.png')},
-    {title: 'Lead', to: 'customers', icon: require('assets/images/icons/info.png')},
-    {title: 'Customers', to: '/customers-list', icon: require('assets/images/icons/info.png')},
-    {title: 'Info', to: '/info', icon: require('assets/images/icons/info.png')},
+    {title: 'Dashboard', to: '/', icon: <DashboardIcon />},
+    {title: 'Lead', to: 'customers', icon: <LeadIcon />},
+    {title: 'Customers', to: '/customers-list', icon: <CustomersIcon />},
+    {title: 'Info', to: '/info', icon: <InfoIcon />},
   ];
 
   return (
@@ -34,7 +38,7 @@ const Navbar = () => {
         {
           navItems.map((navItem, i) => (
             <NavItem to={navItem.to} key={i}>
-              <img src={navItem.icon} alt="navigation icon" />
+              {navItem.icon}
             </NavItem>
           ))
         }

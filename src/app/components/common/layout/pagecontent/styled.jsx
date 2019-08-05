@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-//  utils
-import {getSizeWrtWidth} from 'utils/styles';
-
 //  constants
 import {
   contentPadding,
@@ -11,6 +8,6 @@ import {
 export const PageContent = styled.div`
   ${contentPadding}  
   height: 100%;
-  width: 78%;
+  width: 75%;
   background-color: #FFF;
 `;

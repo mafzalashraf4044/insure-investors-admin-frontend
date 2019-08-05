@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+//  icons
+import Dashboard from 'components/common/icons/Dashboard';
+import Lead from 'components/common/icons/Lead';
+import Customers from 'components/common/icons/Customers';
+import Info from 'components/common/icons/Info';
+
 //  constants
 import {
   navWidth,
@@ -10,6 +16,9 @@ import {
   flexColumnSbC,
   flexColumnFsC,
 } from 'constants/styles';
+
+//  utils
+import { getSizeWrtWidth } from '../../../../utils/styles';
 
 export const Nav = styled.div`
   ${flexColumnSbC}
@@ -27,6 +36,42 @@ export const NavItem = styled(Link)`
   ${flexCC}
   width: ${navWidth};
   margin: 15px 0;
+`;
+
+export const DashboardIcon = styled(Dashboard)`
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
+
+  path {
+    fill: #8492a8;
+  }
+`;
+
+export const LeadIcon = styled(Lead)`
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
+
+  path {
+    fill: #8492a8;
+  }
+`;
+
+export const CustomersIcon = styled(Customers)`
+  width: ${getSizeWrtWidth(25)};
+  height: ${getSizeWrtWidth(25)};
+
+  path {
+    fill: #8492a8;
+  }
+`;
+
+export const InfoIcon = styled(Info)`
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
+
+  path {
+    fill: #8492a8;
+  }
 `;
 
 export const HomeLink = styled(Link)`
@@ -83,5 +128,3 @@ export const ProfileImage = styled.div`
     border-radius: 50%;
   }
 `;
-
-

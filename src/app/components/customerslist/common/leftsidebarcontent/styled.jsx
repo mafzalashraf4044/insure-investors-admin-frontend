@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-//  utils
-import {getSizeWrtWidth} from 'utils/styles'
+//  icons
+import Customers from 'components/common/icons/Customers';
+import Calendar from 'components/common/icons/Calendar';
+import Lead from 'components/common/icons/Lead';
 
 //  constants
 import {
@@ -14,6 +16,9 @@ import {
   flexColumnFsC,
   textOverflowEllipsis,
 } from 'constants/styles';
+
+//  utils
+import {getSizeWrtWidth} from 'utils/styles'
 
 export const Content = styled.div`
   ${contentPadding}
@@ -45,9 +50,31 @@ export const MainItem = styled.div`
   padding-bottom: ${getSizeWrtWidth(15)};
 `;
 
-export const MainItemIcon = styled(FontAwesomeIcon)`
-  font-size: ${getSizeWrtWidth(30)};
-  color: #dc248d;
+export const CustomersIcon = styled(Customers)`
+  width: ${getSizeWrtWidth(35)};
+  height: ${getSizeWrtWidth(35)};
+
+  path {
+    fill: #dc248d;
+  }
+`;
+
+export const CalendarIcon = styled(Calendar)`
+  width: ${getSizeWrtWidth(30)};
+  height: ${getSizeWrtWidth(30)};
+
+  path {
+    fill: #dc248d;
+  }
+`;
+
+export const LeadIcon = styled(Lead)`
+  width: ${getSizeWrtWidth(30)};
+  height: ${getSizeWrtWidth(30)};
+
+  path {
+    fill: #dc248d;
+  }
 `;
 
 export const MainItemRight = styled.div`

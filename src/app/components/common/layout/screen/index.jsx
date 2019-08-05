@@ -1,13 +1,11 @@
 import React from 'react';
 
-import styles from './styles.css';
+import {Screen} from './styled';
 
-const Screen = ({
+export default ({
   children
 }) => (
-  <div className={styles.screen}>
+  <Screen>
     {children}
-  </div>
+  </Screen>
 );
-
-export default Screen;

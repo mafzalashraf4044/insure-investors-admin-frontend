@@ -7,7 +7,9 @@ import {
   Title,
   MainItems,
   MainItem,
-  MainItemIcon,
+  CustomersIcon,
+  CalendarIcon,
+  LeadIcon,
   MainItemRight,
   MainItemTitle,
   MainItemValue,
@@ -20,7 +22,7 @@ import {
 } from './styled';
 
 //  icons
-import { faUser, faUsers, faCalendarDay, faDotCircle } from '@fortawesome/free-solid-svg-icons';
+import { faDotCircle } from '@fortawesome/free-solid-svg-icons';
 
 const LeftSidebarContent = () => {
   return (
@@ -31,7 +33,7 @@ const LeftSidebarContent = () => {
 
       <MainItems>
         <MainItem>
-          <MainItemIcon icon={faUsers} />
+          <CustomersIcon />
 
           <MainItemRight>
             <MainItemTitle>Customers</MainItemTitle>
@@ -40,7 +42,7 @@ const LeftSidebarContent = () => {
         </MainItem>
 
         <MainItem>
-          <MainItemIcon icon={faCalendarDay} />
+          <CalendarIcon />
 
           <MainItemRight>
             <MainItemTitle>Prospects</MainItemTitle>
@@ -49,7 +51,7 @@ const LeftSidebarContent = () => {
         </MainItem>
 
         <MainItem>
-          <MainItemIcon icon={faUser} />
+          <LeadIcon />
 
           <MainItemRight>
             <MainItemTitle>Leads</MainItemTitle>

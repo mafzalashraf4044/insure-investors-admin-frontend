@@ -14,9 +14,6 @@ import {
   NewCustomerButton
 } from './styled';
 
-//  icons
-import { faSearch, faFilter } from '@fortawesome/free-solid-svg-icons';
-
 export default () => {
 
   return (
@@ -25,14 +22,14 @@ export default () => {
         <Title>Customers List</Title>
 
         <SearchBox>
-          <SearchIcon icon={faSearch} />
+          <SearchIcon />
           <SearchInput
             placeholder="Search Customers"
           />
         </SearchBox>
 
         <FilterButton>
-          <FilterIcon icon={faFilter} />
+          <FilterIcon />
           <span>Filter</span>
         </FilterButton>
       </HeaderLeft>

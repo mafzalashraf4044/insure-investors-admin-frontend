@@ -12,8 +12,7 @@ import {getSizeWrtWidth} from 'utils/styles';
   
 //  constants
 import {
-  headerHeight,
-  contentPaddingBottom,
+  tableHeight,
 } from 'constants/styles';
 
 const data = [
@@ -42,7 +41,7 @@ export default () => {
     <CustomersListTable>
       <Scrollbar
         thumbColor="#E7F1F3"
-        height={window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false)}
+        height={tableHeight}
       >
         <Table
           data={data}
