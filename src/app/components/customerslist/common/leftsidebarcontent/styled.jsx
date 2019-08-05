@@ -2,30 +2,34 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 //  utils
-import {getSizeWrtWidth} from 'utils/styles';
+import {getSizeWrtWidth} from 'utils/styles'
 
 //  constants
 import {
-  navWidth,
-  navBg,
-  flexCC,
+  headerHeight,
+  contentPadding,
   flexSbC,
   flexFsFs,
   flexFsC,
-  flexColumnSbC,
   flexColumnFsC,
   textOverflowEllipsis,
 } from 'constants/styles';
 
 export const Content = styled.div`
-  padding: ${getSizeWrtWidth(50)} ${getSizeWrtWidth(30)};
+  ${contentPadding}
 `;
 
-export const Heading = styled.h1`
+export const Header = styled.div`
+  ${flexFsC}
+  height: ${getSizeWrtWidth(headerHeight)};
+`;
+
+export const Title = styled.h1`
   font-size: ${getSizeWrtWidth(28)};
+  line-height: ${getSizeWrtWidth(28)};
   color: #FFF;
   font-weight: 800;
-  margin: 0 0 ${getSizeWrtWidth(50)} 0;
+  margin: 0;
 `;
 
 export const MainItems = styled.div`

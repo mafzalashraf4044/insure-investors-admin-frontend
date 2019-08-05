@@ -1,13 +1,12 @@
 import React from 'react';
 
-import styles from './styles.css';
+//  styled components
+import { PageContent } from './styled';
 
-const PageContent = ({
+export default ({
   children
 }) => (
-  <div className={styles.pageContent}>
+  <PageContent>
     {children}
-  </div>
+  </PageContent>
 );
-
-export default PageContent;

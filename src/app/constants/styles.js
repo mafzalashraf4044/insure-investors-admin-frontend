@@ -1,5 +1,19 @@
+//  utils
+import {getSizeWrtWidth} from 'utils/styles';
+
 export const navWidth = '5vw';
 export const navBg = '#101f77';
+
+export const headingFontSize = 28;
+
+export const contentPaddingBottom = 40;
+export const contentPaddingHorizontal = 30;
+
+export const headerHeight = (2 * contentPaddingBottom) + headingFontSize;
+
+export const contentPadding = `
+  padding: 0 ${getSizeWrtWidth(contentPaddingHorizontal)} ${getSizeWrtWidth(contentPaddingBottom)} ${getSizeWrtWidth(contentPaddingHorizontal)};
+`;
 
 export const textOverflowEllipsis = `
   text-overflow: ellipsis;

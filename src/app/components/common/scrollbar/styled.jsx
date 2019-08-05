@@ -24,6 +24,7 @@ export const TrackVertical = styled.div`
   top: 0px;
   position: absolute;
   height: 100%;
+  padding: 2px 0;
   border-radius: 5px;
   transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;

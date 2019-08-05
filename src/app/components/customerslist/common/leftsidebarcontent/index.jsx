@@ -3,7 +3,8 @@ import React from 'react';
 //  styled components
 import {
   Content,
-  Heading,
+  Header,
+  Title,
   MainItems,
   MainItem,
   MainItemIcon,
@@ -22,10 +23,11 @@ import {
 import { faUser, faUsers, faCalendarDay, faDotCircle } from '@fortawesome/free-solid-svg-icons';
 
 const LeftSidebarContent = () => {
-
   return (
     <Content>
-      <Heading>Overview</Heading>
+      <Header>
+        <Title>Overview</Title>
+      </Header>
 
       <MainItems>
         <MainItem>

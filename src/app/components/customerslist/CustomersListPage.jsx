@@ -5,15 +5,18 @@ import Page from 'components/common/layout/page';
 import LeftSidebar from 'components/common/layout/leftsidebar';
 import PageContent from 'components/common/layout/pagecontent';
 import LeftSidebarContent from './common/leftsidebarcontent';
+import Header from './common/header';
+import CustomersListTable from './common/customerslisttable';
 
-const CustomersListPage = () => {  
+const CustomersListPage = () => {    
   return (
     <Page>
       <LeftSidebar>
         <LeftSidebarContent />
       </LeftSidebar>
       <PageContent>
-        <h1>Customers List</h1>
+        <Header />
+        <CustomersListTable />
       </PageContent>
     </Page>
   );
