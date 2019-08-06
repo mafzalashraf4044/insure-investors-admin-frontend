@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {
   Table,
@@ -10,6 +10,8 @@ import {
 } from './styled';
 
 export default ({columns, data}) => {
+  const [hoveredRowIndex, setHoveredRowIndex] = useState(-1);
+
   return (
     <Table>
       <THead>
@@ -26,11 +28,15 @@ export default ({columns, data}) => {
       <TBody>
         {
           data.map((row, iRow) => (
-            <Tr key={iRow}>
+            <Tr
+              key={iRow}
+              onMouseEnter={() => setHoveredRowIndex(iRow)}
+              onMouseLeave={() => setHoveredRowIndex(-1)}
+            >
               {
                 columns.map((column, iCol) => (
                   <Td key={iCol}>
-                    {column.render(row)}
+                    {column.render(row, iRow === hoveredRowIndex)}
                   </Td>
                 ))
               }

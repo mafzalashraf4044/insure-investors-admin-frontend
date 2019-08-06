@@ -10,6 +10,7 @@ import App from './components/App';
 
 //  styles
 import './styles/index.scss';
+import './styles/animate.scss';
 
 const favIcon = require('assets/images/fav.ico');
 

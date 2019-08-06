@@ -6,6 +6,7 @@ import {getSizeWrtWidth} from 'utils/styles';
 
 export const Table = styled.table`
   width: 100%;
+  border-collapse: collapse;
 `;
 
 export const THead = styled.thead`
@@ -14,6 +15,11 @@ export const THead = styled.thead`
 
 export const Tr = styled.tr`
   height: ${getSizeWrtWidth(68)};
+
+  &:hover {
+    border-radius: 5px;
+    background-color: #eeeeee;
+  }
 `;
 
 export const Th = styled.th`
