@@ -62,6 +62,13 @@ export const flexFsC = `
   align-items: center;
 `;
 
+export const flexFsCWrap = `
+  ${flex}
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
 export const flexColumnFsC = `
   ${flexColumn}
   justify-content: flex-start;
@@ -77,5 +84,31 @@ export const flexFsFs = `
 export const flexColumnFsFs = `
   ${flexColumn}
   justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+export const flexFsFsWrap = `
+  ${flex}
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+export const flexColumnFsFsWrap = `
+  ${flexColumn}
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+export const flexCFs = `
+  ${flex}
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+export const flexColumnCFs = `
+  ${flexColumn}
+  justify-content: center;
   align-items: flex-start;
 `;

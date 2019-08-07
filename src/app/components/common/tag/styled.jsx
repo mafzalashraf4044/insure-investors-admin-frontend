@@ -1,33 +1,23 @@
 import styled from 'styled-components';
 
-import { Scrollbars as RCScrollbars } from 'react-custom-scrollbars';
+//  constants
+import {
+  flexCC,
+} from 'constants/styles';
 
-export const Scrollbars = styled(RCScrollbars)`
-  width: 100%;
-
-  &:active,
-  &:hover {
-    .track-vertical {
-      opacity: 1;
-    }
-  }
-`;
+//  utils
+import {getSizeWrtWidth} from 'utils/styles';
   
-export const ThumbVertical = styled.div`
-  border-radius: 5px;
-  background-color: ${props => props.thumbColor};
+export const Tag = styled.div`
+  ${flexCC}
+  border-radius: 2px;
+  margin-right: ${getSizeWrtWidth(5)};
+  background-color: ${props => props.bgColor};
+  padding: ${getSizeWrtWidth(2)} ${getSizeWrtWidth(5)};
 `;
 
-export const TrackVertical = styled.div`
-  opacity: 0;
-  right: 2px;
-  top: 0px;
-  position: absolute;
-  height: 100%;
-  border-radius: 5px;
-  transition: opacity 0.5s ease;
-  -moz-transition: opacity 0.5s ease;
-  -webkit-transition: opacity 0.5s ease;
-  -o-transition: opacity 0.5s ease;
-  background-color: transparent;
+export const TagText = styled.span`
+  font-size: ${getSizeWrtWidth(12)};
+  color: #FFF;
+  font-weight: 700;
 `;

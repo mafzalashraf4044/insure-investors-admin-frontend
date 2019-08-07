@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 //  utils
 import {getSizeWrtWidth} from 'utils/styles';
 
 export const Table = styled.table`
   width: 100%;
-  border-collapse: collapse;
+  border-spacing: 0;
 `;
 
 export const THead = styled.thead`
@@ -15,10 +14,10 @@ export const THead = styled.thead`
 
 export const Tr = styled.tr`
   height: ${getSizeWrtWidth(68)};
+  box-shadow: ${props => props.expanded ? 'inset 0 0 0 1px #e1e5e9' : 'inset 0 1px 0 0 #e1e5e9'};
 
   &:hover {
-    border-radius: 5px;
-    background-color: #eeeeee;
+    background-color: #eee;
   }
 `;
 
@@ -30,7 +29,6 @@ export const Th = styled.th`
   padding-left: ${getSizeWrtWidth(30)};
 `;
 
-
 export const TBody = styled.tbody`
 
 `;
@@ -40,6 +38,13 @@ export const Td = styled.td`
   color: #0f203f;
   font-weight: 400;
   text-align: left;
-  border-top: 1px solid #e1e5e9;
   padding-left: ${getSizeWrtWidth(30)};
+`;
+
+export const ExpandableTr = styled.tr`
+
+`;
+
+export const ExpandableTd = styled.td`
+  box-shadow: inset 1px 0 0 0px #e1e5e9, inset -1px 0 0 0px #e1e5e9;
 `;

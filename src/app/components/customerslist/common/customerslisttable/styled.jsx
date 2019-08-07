@@ -12,6 +12,7 @@ import {
   flexCC,
   flexSbC,
   flexFsC,
+  flexFsFsWrap,
   flexColumnFsFs,
 } from 'constants/styles';
 
@@ -19,7 +20,6 @@ import {
 import {getSizeWrtWidth} from 'utils/styles'
 
 export const CustomersListTable = styled.div`
-  border-top: 1px solid #e1e5e9;
   border-bottom: 1px solid #e1e5e9;
 `;
 
@@ -54,12 +54,14 @@ export const CustomerSubText = styled.span`
 
 export const Actions = styled.div`
   ${flexSbC}
+  z-index: 1;
   position: relative;
   padding-right: ${getSizeWrtWidth(10)};
 `;
 
 export const ActionsLeft = styled.div`
   ${flexSbC}
+  z-index: 1;
   position: absolute;
   top: 0;
   right: ${getSizeWrtWidth(100)};
@@ -98,9 +100,62 @@ export const PencilIcon = styled(Pencil)`
 export const EyeIcon = styled(Eye)`
   width: ${getSizeWrtWidth(14)};
   height: ${getSizeWrtWidth(14)};
+
+  path {
+    fill: ${props => props.fill ? props.fill : '#FFF'};
+  }
 `;
 
 export const DeleteIcon = styled(Delete)`
   width: ${getSizeWrtWidth(14)};
   height: ${getSizeWrtWidth(14)};
+`;
+
+export const RowDetails = styled.div`
+  ${flexColumnFsFs}
+  padding: ${getSizeWrtWidth(15)} ${getSizeWrtWidth(30)} 0 ${getSizeWrtWidth(30)};
+  margin-right: ${getSizeWrtWidth(10)};
+`;
+
+export const RowDetailItems = styled.div`
+  ${flexFsFsWrap}
+  width: 100%;
+  margin-bottom: ${getSizeWrtWidth(15)}
+`;
+
+export const RowDetailItem = styled.div`
+  ${flexColumnFsFs}
+  width: 20%;
+`;
+
+export const RowDetailItemTitle = styled.p`
+  font-size: ${getSizeWrtWidth(12)};
+  color: #868b96;
+  font-weight: 700;
+  margin: 0 0 ${getSizeWrtWidth(10)} 0;
+`;
+
+export const RowDetailItemValue = styled.p`
+  font-size: ${getSizeWrtWidth(14)};
+  color: #525c6e;
+  font-weight: 700;
+  margin: 0;
+`;
+
+export const SubmissionItemHeader = styled.div`
+
+`;
+
+export const SubmissionItemHeaderTop = styled.div`%;
+`;
+
+export const SubmissionItemId = styled.div`
+  font-size: ${getSizeWrtWidth(18)};
+  color: #525c6e;
+  font-weight: 700;
+  margin: 0 0 ${getSizeWrtWidth(5)} 0;
+`;
+
+export const SubmissionItemHeaderBottom = styled.div`
+  ${flexFsC}
 `;
