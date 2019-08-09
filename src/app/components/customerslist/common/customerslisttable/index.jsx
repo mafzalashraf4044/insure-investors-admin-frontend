@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 
+import {isUndefined} from 'lodash';
+
 import {
   CustomersListTable,
   Customer,
@@ -160,7 +162,7 @@ export default () => {
 
   const renderPolicy = (o, i) => {
     return (
-      <DescriptionListItem key={i}>
+      <DescriptionListItem isArray={!isUndefined(i)} key={i}>
         <DescriptionListHeader>
           <SubmissionItemHeader>
             <SubmissionItemHeaderTop>
@@ -189,7 +191,7 @@ export default () => {
 
   const renderSubmission = (o, i) => {
     return (
-      <DescriptionListItem key={i}>
+      <DescriptionListItem isArray={!isUndefined(i)} key={i}>
         <DescriptionListHeader>
           <SubmissionItemHeader>
             <SubmissionItemHeaderTop>
