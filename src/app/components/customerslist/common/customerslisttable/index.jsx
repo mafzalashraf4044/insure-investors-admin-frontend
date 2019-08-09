@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {
   CustomersListTable,
@@ -174,7 +174,6 @@ export default () => {
         </DescriptionListHeader>
   
         <DescriptionListFields>
-  
           {
             o.details.map((detail, index) => (
               <DescriptionListField key={index}>
@@ -183,12 +182,10 @@ export default () => {
               </DescriptionListField>
             ))
           }
-  
         </DescriptionListFields>
       </DescriptionListItem>
     );
   };
-
 
   const renderSubmission = (o, i) => {
     return (

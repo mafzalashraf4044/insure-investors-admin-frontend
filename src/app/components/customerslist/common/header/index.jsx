@@ -14,7 +14,7 @@ import {
   NewCustomerButton
 } from './styled';
 
-export default () => {
+export default ({toggleSidebar}) => {
 
   return (
     <Header>
@@ -35,7 +35,7 @@ export default () => {
       </HeaderLeft>
 
       <HeaderRight>
-        <NewCustomerButton>
+        <NewCustomerButton type="button" onClick={toggleSidebar}>
           <span>New Customer</span>
         </NewCustomerButton>
       </HeaderRight>

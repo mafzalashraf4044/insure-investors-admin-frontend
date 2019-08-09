@@ -30,7 +30,7 @@ export const DescriptionListTitle = styled.h2`
 export const DescriptionListItem = styled.div`
   ${flexSbC}
   width: 100%;
-  margin-bottom: ${getSizeWrtWidth(30)};
+  margin-bottom: ${props => props.isArray ? getSizeWrtWidth(30) : 0};
 `;
 
 export const DescriptionListHeader = styled.div`
@@ -41,13 +41,20 @@ export const DescriptionListHeader = styled.div`
 `;
 
 export const DescriptionListFields = styled.div`
-  ${flexFsFs}
+  ${props => props.fieldsPerRow ? flexFsFsWrap : flexFsFs}
   width: 100%;
 `;
 
 export const DescriptionListField = styled.div`
-  flex: 1;
   ${flexColumnFsFs}
+  ${
+    props => props.minWidth ? `
+      margin-bottom: ${getSizeWrtWidth(10)};
+      min-width: ${props.minWidth}%;    
+    ` : `
+      flex: 1;
+    `
+  }
 `;
 
 export const DescriptionTitle = styled.p`

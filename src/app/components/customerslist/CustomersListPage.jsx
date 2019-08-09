@@ -7,17 +7,31 @@ import PageContent from 'components/common/layout/pagecontent';
 import LeftSidebarContent from './common/leftsidebarcontent';
 import Header from './common/header';
 import CustomersListTable from './common/customerslisttable';
+import AddNewCustomer from './common/addnewcustomer';
 
 const CustomersListPage = () => {    
+
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  }
+
   return (
     <Page>
       <LeftSidebar>
         <LeftSidebarContent />
       </LeftSidebar>
       <PageContent>
-        <Header />
+        <Header
+          toggleSidebar={toggleSidebar}
+        />
         <CustomersListTable />
       </PageContent>
+      <AddNewCustomer
+        toggle={toggleSidebar}
+        open={sidebarOpen}
+      />
     </Page>
   );
 };
