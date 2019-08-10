@@ -32,3 +32,7 @@ export const TrackVertical = styled.div`
   -o-transition: opacity 0.5s ease;
   background-color: transparent;
 `;
+
+export const View = styled.div`
+  padding-right: 2px;
+`;

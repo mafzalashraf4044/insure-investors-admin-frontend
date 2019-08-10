@@ -27,7 +27,7 @@ export const Customer = styled.div`
   ${flexFsC}
 `;
 
-export const CustomImage = styled.img`
+export const CustomerImage = styled.img`
   width: 43px;
   height: 43px;
   border-radius: 50%;

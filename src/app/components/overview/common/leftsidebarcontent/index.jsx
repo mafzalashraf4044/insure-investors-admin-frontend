@@ -3,128 +3,109 @@ import React from 'react';
 //  styled components
 import {
   Content,
+  EditButton,
+  EditV2Icon,
   Header,
-  Title,
-  MainItems,
-  MainItem,
-  CustomersIcon,
-  CalendarIcon,
-  LeadIcon,
-  MainItemRight,
-  MainItemTitle,
-  MainItemValue,
-  List,
-  ListItem,
-  ListItemLeft,
-  ListItemBullet,
-  ListItemTitle,
-  ListItemRight
+  UserProfileImage,
+  UserFullName,
+  UserDetails,
+  UserDetail,
+  UserDetailIconBg,
+  CompanyIcon,
+  PhoneIcon,
+  EmailIcon,
+  UserDetailContent,
+  UserDetailTitle,
+  UserDetailValue,
+  MoreInfoButton,
+  MoreInfoButtonText,
+  ArrowRightIcon,
+  NavItems,
+  NavItem,
+  CustomerOverviewIcon,
+  PoliciesIcon,
+  BillingIcon,
+  SubmissionIcon,
+  DocumentsIcon,
+  NavItemTitle
+
 } from './styled';
 
 //  icons
 import { faDotCircle } from '@fortawesome/free-solid-svg-icons';
 
+import Tag from 'components/common/tag';
+
 const LeftSidebarContent = () => {
+  const navItems = [
+    {title: 'Customers Overview', icon: <CustomerOverviewIcon />},
+    {title: 'Policies', icon: <PoliciesIcon />},
+    {title: 'Billing', icon: <BillingIcon />},
+    {title: 'Submission', icon: <SubmissionIcon />},
+    {title: 'Documents', icon: <DocumentsIcon />},
+    {title: 'Activies', icon: <PoliciesIcon />},
+  ];
+
   return (
     <Content>
+      <EditButton type="button">
+        <EditV2Icon />
+      </EditButton>
       <Header>
-        <Title>Overview</Title>
+        <UserProfileImage src={require('assets/images/profile-image.jpg')} alt="user profile image" />
+        <UserFullName>Donald G Nielsen</UserFullName>
+        <Tag bgColor="#00a8d2">Customer</Tag>
       </Header>
 
-      <MainItems>
-        <MainItem>
-          <CustomersIcon />
+      <UserDetails>
+        <UserDetail>
+          <UserDetailIconBg bgColor="#00d69d32">
+            <CompanyIcon />
+          </UserDetailIconBg>
+          <UserDetailContent>
+            <UserDetailTitle>Company name</UserDetailTitle>
+            <UserDetailValue>3D Builders LLC</UserDetailValue>
+          </UserDetailContent>
+        </UserDetail>
 
-          <MainItemRight>
-            <MainItemTitle>Customers</MainItemTitle>
-            <MainItemValue>105,266</MainItemValue>
-          </MainItemRight>
-        </MainItem>
+        <UserDetail>
+          <UserDetailIconBg bgColor="#ffba0032">
+            <PhoneIcon />
+          </UserDetailIconBg>
 
-        <MainItem>
-          <CalendarIcon />
+          <UserDetailContent>
+            <UserDetailTitle>Phone number</UserDetailTitle>
+            <UserDetailValue>614-650-5914</UserDetailValue>
+          </UserDetailContent>
+        </UserDetail>
 
-          <MainItemRight>
-            <MainItemTitle>Prospects</MainItemTitle>
-            <MainItemValue>10,321</MainItemValue>
-          </MainItemRight>
-        </MainItem>
+        <UserDetail>
+          <UserDetailIconBg bgColor="#0091ff32">
+            <EmailIcon />
+          </UserDetailIconBg>
 
-        <MainItem>
-          <LeadIcon />
+          <UserDetailContent>
+            <UserDetailTitle>Email</UserDetailTitle>
+            <UserDetailValue>ivory1975@gmail.com</UserDetailValue>
+          </UserDetailContent>
+        </UserDetail>
 
-          <MainItemRight>
-            <MainItemTitle>Leads</MainItemTitle>
-            <MainItemValue>5,852</MainItemValue>
-          </MainItemRight>
-        </MainItem>
-      </MainItems>
+        <MoreInfoButton>
+          <MoreInfoButtonText>More Info</MoreInfoButtonText>
+          <ArrowRightIcon />
+        </MoreInfoButton>
+      </UserDetails>
 
-      <List>
-        <ListItem withMarginBottom>
-          <ListItemLeft>
-            <ListItemBullet icon={faDotCircle} color="#0e8bf9" />
-            <ListItemTitle>Open Tasks</ListItemTitle>
-          </ListItemLeft>
-          <ListItemRight>26</ListItemRight>
-        </ListItem>
-
-        <ListItem>
-          <ListItemLeft>
-            <ListItemBullet icon={faDotCircle} color="#32c632" />
-            <ListItemTitle>New Business</ListItemTitle>
-          </ListItemLeft>
-          <ListItemRight>$123,456</ListItemRight>
-        </ListItem>
-
-        <ListItem>
-          <ListItemLeft>
-            <ListItemBullet icon={faDotCircle} color="#da248c" />
-            <ListItemTitle>Renewal</ListItemTitle>
-          </ListItemLeft>
-          <ListItemRight>$81,456</ListItemRight>
-        </ListItem>
-
-        <ListItem>
-          <ListItemLeft>
-            <ListItemBullet icon={faDotCircle} color="#ff9413" />
-            <ListItemTitle>Quoted</ListItemTitle>
-          </ListItemLeft>
-          <ListItemRight>$57,456</ListItemRight>
-        </ListItem>
-
-        <ListItem withMarginBottom>
-          <ListItemLeft>
-            <ListItemBullet icon={faDotCircle} color="#863fa4" />
-            <ListItemTitle>Lost Business</ListItemTitle>
-          </ListItemLeft>
-          <ListItemRight>$93,456</ListItemRight>
-        </ListItem>
-
-        <ListItem>
-          <ListItemLeft>
-            <ListItemBullet icon={faDotCircle} color="#886cff" />
-            <ListItemTitle>Renewal Retention</ListItemTitle>
-          </ListItemLeft>
-          <ListItemRight>45%</ListItemRight>
-        </ListItem>
-
-        <ListItem>
-          <ListItemLeft>
-            <ListItemBullet icon={faDotCircle} color="#58cc8f" />
-            <ListItemTitle>Closing Ratio</ListItemTitle>
-          </ListItemLeft>
-          <ListItemRight>86%</ListItemRight>
-        </ListItem>
-
-        <ListItem>
-          <ListItemLeft>
-            <ListItemBullet icon={faDotCircle} color="#e96137" />
-            <ListItemTitle>Aged Receivables</ListItemTitle>
-          </ListItemLeft>
-          <ListItemRight>$123,456</ListItemRight>
-        </ListItem>
-      </List>
+      <NavItems>
+        {
+          navItems.map((navItem, i) => (
+            <NavItem key={i}>
+              {navItem.icon}
+              <NavItemTitle>{navItem.title}</NavItemTitle>
+            </NavItem>
+          ))
+        }
+      </NavItems>
     </Content>
   );
 };

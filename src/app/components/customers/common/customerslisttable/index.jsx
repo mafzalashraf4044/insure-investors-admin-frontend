@@ -5,7 +5,7 @@ import {isUndefined} from 'lodash';
 import {
   CustomersListTable,
   Customer,
-  CustomImage,
+  CustomerImage,
   CustomerText,
   CustomerName,
   CustomerSubText,
@@ -118,7 +118,7 @@ export default () => {
 
   const renderCustomer = (o) => (
     <Customer>
-      <CustomImage src={require('assets/images/profile-image.jpg')} alt="profile image" />
+      <CustomerImage src={require('assets/images/profile-image.jpg')} alt="profile image" />
       
       <CustomerText>
         <CustomerName>{o.name}</CustomerName>
