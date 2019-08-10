@@ -13,6 +13,8 @@ export const headerHeight = (2 * contentPaddingBottom) + headingFontSize;
 
 export const tableHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
 
+export const overviewHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
+
 export const contentPadding = `
   padding: 0 ${getSizeWrtWidth(contentPaddingHorizontal)} ${getSizeWrtWidth(contentPaddingBottom)} ${getSizeWrtWidth(contentPaddingHorizontal)};
 `;

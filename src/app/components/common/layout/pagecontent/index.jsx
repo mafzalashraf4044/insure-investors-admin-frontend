@@ -4,9 +4,10 @@ import React from 'react';
 import { PageContent } from './styled';
 
 export default ({
-  children
+  children,
+  bgColor,
 }) => (
-  <PageContent>
+  <PageContent bgColor={bgColor}>
     {children}
   </PageContent>
 );

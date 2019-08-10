@@ -9,5 +9,5 @@ export const PageContent = styled.div`
   ${contentPadding}  
   height: 100%;
   width: 75%;
-  background-color: #FFF;
+  background-color: ${props => props.bgColor || '#FFF'};
 `;
