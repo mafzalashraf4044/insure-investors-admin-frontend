@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 //  styled components
 import {
@@ -22,22 +22,21 @@ import {
 
 export default () => {
 
+  const [tabIndex, setTabIndex] = useState(-1);
+
   return (
     <Overview>
       <Scrollbar
-        thumbColor="#DD238E"
+        key={tabIndex}
         height={overviewHeight}
+        thumbColor={tabIndex !== -1 ? "#DD238E" : "transparent"}
       >
         <OverviewTop>
-          <OverviewStats />
+          <OverviewStats tabIndex={tabIndex} setTabIndex={setTabIndex} />
         </OverviewTop>
         <OverviewBottom>
-          <PortfolioSummary>
-            summary
-          </PortfolioSummary>
-          <DashboardDetails>
-            details
-          </DashboardDetails>
+          <PortfolioSummary />
+          <DashboardDetails />
         </OverviewBottom>
       </Scrollbar>
     </Overview>

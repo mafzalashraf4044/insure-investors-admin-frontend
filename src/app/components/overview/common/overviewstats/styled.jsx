@@ -62,7 +62,7 @@ export const OverviewTabBottom = styled.div`
   width: 100%;
 `;
 
-export const CaretIcon = styled(Caret)`
+export const TabCaretIcon = styled(Caret)`
   width: ${getSizeWrtWidth(12)};
   height: ${getSizeWrtWidth(12)};
   position: absolute;

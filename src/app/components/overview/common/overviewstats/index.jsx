@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 //  styled components
 import {
@@ -9,7 +9,7 @@ import {
   OverviewTabTop,
   OverviewTabTitle,
   OverviewTabBottom,
-  CaretIcon,
+  TabCaretIcon,
   OverviewTabTotalPremiumTitle,
   OverviewTabTotalPremiumValue,
   OverviewTabContent,
@@ -30,6 +30,7 @@ import {
   BillingDetailsValue,
 } from './styled';
 
+import TabMenu from './tabmenu';
 import Tag from 'components/common/tag';
 import Collapsible from 'react-collapsible';
 
@@ -68,14 +69,12 @@ const submissions = [
   },
 ];
 
-export default ({children}) => {
-
-  const [tabIndex, setTabIndex] = useState(-1);
+export default ({children, tabIndex, setTabIndex}) => {
 
   const tabs = [
-    {title: 'All Policies', color: '#edad07', count: '14'},
-    {title: 'Submissions', color: '#00d69d', count: '03'},
-    {title: 'Expiring', color: '#896cff', count: '05'},
+    {title: 'All Policies', color: '#edad07', count: '14', withDropdown: true},
+    {title: 'Submissions', color: '#00d69d', count: '03', withDropdown: false},
+    {title: 'Expiring', color: '#896cff', count: '05', withDropdown: true},
   ];
 
   const renderSubmission = (o, i) => {
@@ -123,13 +122,17 @@ export default ({children}) => {
                 <OverviewTabTop>
                   <OverviewTabTitle>{tab.title}</OverviewTabTitle> 
                   <Tag bgColor={tab.color}>{tab.count}</Tag>
+                  {
+                    tab.withDropdown && <TabMenu />
+                  }
+
                 </OverviewTabTop>
                 <OverviewTabBottom>
                   <OverviewTabTotalPremiumTitle>Total Premium</OverviewTabTotalPremiumTitle> 
                   <OverviewTabTotalPremiumValue>$55,250</OverviewTabTotalPremiumValue> 
                 </OverviewTabBottom>
 
-                <CaretIcon
+                <TabCaretIcon
                   color={tab.color}
                   tabActive={tabIndex === i}
                 />

@@ -42,7 +42,7 @@ export const DashboardDetailTabText = styled.div`
 export const TabContent = styled.div`
   padding: ${getSizeWrtWidth(15)};
   margin-right: -${getSizeWrtWidth(12)};
-  
+
   .rc-steps-item-title {
     font-size: ${getSizeWrtWidth(14)};
     line-height: ${getSizeWrtWidth(20)};
@@ -58,6 +58,10 @@ export const TabContent = styled.div`
 
   .rc-steps-icon {
     top: 0!important;
+  }
+
+  .rc-steps-small .rc-steps-item-content {
+    margin-top: -3px;
   }
 
 `;

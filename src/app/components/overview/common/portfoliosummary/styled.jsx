@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 import Add from 'components/common/icons/Add';
+import Flood from 'components/common/icons/Flood';
+import GeneralLiability from 'components/common/icons/GeneralLiability';
+import Property from 'components/common/icons/Property';
+import Policies from 'components/common/icons/Policies';
+import Accordion from 'components/common/icons/Accordion';
 
 //  constants
 import {
@@ -67,4 +72,78 @@ export const PortfolioContent = styled.div`
 
 export const PortfolioList = styled.div`
   padding-right: ${getSizeWrtWidth(12)};
+`;
+
+export const CoveragePremiums = styled.div`
+  ${flexFsC}
+  margin-right: ${getSizeWrtWidth(15)};
+`;
+
+export const CoveragePremium = styled.div`
+  ${flexFsC}
+  margin: 0 ${getSizeWrtWidth(15)} 0 0;
+`;
+
+export const FloodIcon = styled(Flood)`
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
+
+  path {
+    fill: #00a8d2;
+  }
+`;
+
+export const GeneralLiabilityIcon = styled(GeneralLiability)`
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
+
+  path {
+    fill: #00a8d2;
+  }
+`;
+
+export const PropertyIcon = styled(Property)`
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
+
+  path {
+    fill: #00a8d2;
+  }
+`;
+
+export const PoliciesIcon = styled(Policies)`
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
+
+  path {
+    fill: #00a8d2;
+  }
+`;
+
+export const CoveragePremiumValue = styled.p`
+  font-size: ${getSizeWrtWidth(14)};
+  color: #525c6e;
+  font-weight: 700;
+  margin: 0 0 0 ${getSizeWrtWidth(5)};
+`;
+
+export const ExpandButton = styled.button`
+  ${flexCC}
+  align-self: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const AccordionIcon = styled(Accordion)`
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
+
+  path {
+    fill: #00a8d2;
+  }
 `;

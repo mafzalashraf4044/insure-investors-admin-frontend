@@ -10,6 +10,15 @@ import {
   AddPropertyButtonText,
   PortfolioContent,
   PortfolioList,
+  CoveragePremiums,
+  CoveragePremium,
+  FloodIcon,
+  GeneralLiabilityIcon,
+  PropertyIcon,
+  PoliciesIcon,
+  CoveragePremiumValue,
+  ExpandButton,
+  AccordionIcon,
 } from './styled';
 
 import DescriptionList from 'components/common/descriptionlist'; 
@@ -44,7 +53,26 @@ export default () => {
 
           <DescriptionListField>
             <DescriptionTitle>Coverage Premiums</DescriptionTitle>
-            <DescriptionValue></DescriptionValue>
+            <DescriptionValue>
+              <CoveragePremiums>
+                <CoveragePremium>
+                  <FloodIcon />
+                  <CoveragePremiumValue>$256</CoveragePremiumValue>
+                </CoveragePremium>
+                <CoveragePremium>
+                  <GeneralLiabilityIcon />
+                  <CoveragePremiumValue>$300</CoveragePremiumValue>
+                </CoveragePremium>    
+                <CoveragePremium>
+                  <PropertyIcon />
+                  <CoveragePremiumValue>$750</CoveragePremiumValue>
+                </CoveragePremium>    
+                <CoveragePremium>
+                  <PoliciesIcon />
+                  <CoveragePremiumValue>$215</CoveragePremiumValue>
+                </CoveragePremium>                
+              </CoveragePremiums>
+            </DescriptionValue>
           </DescriptionListField>
 
           <DescriptionListField>
@@ -52,6 +80,10 @@ export default () => {
             <DescriptionValue>$2,500</DescriptionValue>
           </DescriptionListField>
   
+          <ExpandButton>
+            <AccordionIcon />
+          </ExpandButton>
+
         </DescriptionListFields>
       </DescriptionListItem>
     );

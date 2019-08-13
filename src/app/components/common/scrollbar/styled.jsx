@@ -4,22 +4,14 @@ import { Scrollbars as RCScrollbars } from 'react-custom-scrollbars';
 
 export const Scrollbars = styled(RCScrollbars)`
   width: 100%;
-
-  &:active,
-  &:hover {
-    .track-vertical {
-      opacity: 1;
-    }
-  }
 `;
   
 export const ThumbVertical = styled.div`
   border-radius: 5px;
-  background-color: ${props => props.thumbColor};
+  background: ${props => props.thumbColor};
 `;
 
 export const TrackVertical = styled.div`
-  opacity: 0;
   right: 2px;
   top: 0px;
   position: absolute;
