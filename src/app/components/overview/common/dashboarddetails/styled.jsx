@@ -13,7 +13,6 @@ import {getSizeWrtWidth} from 'utils/styles';
 
 export const DashboardDetails = styled.div`
   width: calc(30% - ${getSizeWrtWidth(10)});
-  height: ${getSizeWrtWidth(610)};
   border-radius: 4px;
   background-color: #FFF;
 `;
@@ -21,7 +20,7 @@ export const DashboardDetails = styled.div`
 export const DashboardDetailTabs = styled.div`
   ${flexSbC}
   width: 100%;
-  border-bottom: 1px solid #e1e5e9;
+  box-shadow: inset 0 -1px #e1e5e9;
 `;
 
 export const DashboardDetailTab = styled.div`
@@ -35,13 +34,15 @@ export const DashboardDetailTab = styled.div`
 
 export const DashboardDetailTabText = styled.div`
   font-size: ${getSizeWrtWidth(16)};
+  line-height: ${getSizeWrtWidth(20)};
   color: #03105c;
   font-weight: 700;
 `;
 
 export const TabContent = styled.div`
   padding: ${getSizeWrtWidth(15)};
-
+  margin-right: -${getSizeWrtWidth(12)};
+  
   .rc-steps-item-title {
     font-size: ${getSizeWrtWidth(14)};
     line-height: ${getSizeWrtWidth(20)};

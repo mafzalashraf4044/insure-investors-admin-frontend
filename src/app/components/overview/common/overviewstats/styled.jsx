@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import Caret from 'components/common/icons/Caret';
 import ArrowRight from 'components/common/icons/ArrowRight';
 
 //  constants
@@ -38,6 +39,7 @@ export const OverviewTab = styled.div`
   background-color: #FFF;
   border-radius: 4px;
   cursor: pointer;
+  position: relative;
   padding: ${getSizeWrtWidth(15)};
   border-bottom: 15px solid ${props => props.active ? 'transparent' : props.borderColor};
   box-shadow: ${props => props.active ? '0 15px #FFF' : 'none'};
@@ -60,11 +62,23 @@ export const OverviewTabBottom = styled.div`
   width: 100%;
 `;
 
+export const CaretIcon = styled(Caret)`
+  width: ${getSizeWrtWidth(12)};
+  height: ${getSizeWrtWidth(12)};
+  position: absolute;
+  bottom: -${getSizeWrtWidth(15)};
+  transform: rotate(${props => props.tabActive ? 180 : 0}deg);
+
+  path {
+    fill: ${props => props.tabActive ? props.color : '#FFF'};
+  }
+`;
+
 export const OverviewTabTotalPremiumTitle = styled.p`
   font-size: ${getSizeWrtWidth(12)};
   color: #777777;
   font-weight: 700;
-  margin: 0 0 ${getSizeWrtWidth(15)} 0;
+  margin: 0 0 ${getSizeWrtWidth(5)} 0;
 `;
 
 export const OverviewTabTotalPremiumValue = styled.p`

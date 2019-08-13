@@ -7,7 +7,9 @@ import {
   Title,
   AddPropertyButton,
   AddIcon,
-  AddPropertyButtonText
+  AddPropertyButtonText,
+  PortfolioContent,
+  PortfolioList,
 } from './styled';
 
 import DescriptionList from 'components/common/descriptionlist'; 
@@ -18,6 +20,11 @@ import {
   DescriptionTitle,
   DescriptionValue
 } from 'components/common/descriptionlist/styled';
+import Scrollbar from 'components/common/scrollbar';
+
+import {
+  portfolioSummaryHeight,
+} from 'constants/styles';
 
 export default () => {
 
@@ -60,17 +67,24 @@ export default () => {
           <AddPropertyButtonText>Add Property</AddPropertyButtonText>
         </AddPropertyButton>
       </Header>
-
-      {
-        properties.map((property, i) => (
-          <DescriptionList
-            key={i}
-            data={property}
-            renderListItem={renderProperty}
-          />
-        ))
-      }
-
+      <PortfolioContent>
+        <Scrollbar
+          thumbColor="#cfd2e4"
+          height={portfolioSummaryHeight}
+        >
+          <PortfolioList>
+            {
+              properties.map((property, i) => (
+                <DescriptionList
+                  key={i}
+                  data={property}
+                  renderListItem={renderProperty}
+                />
+              ))
+            }
+          </PortfolioList>
+        </Scrollbar>
+      </PortfolioContent>
     </PortfolioSummary>
   );
 };

@@ -6,6 +6,7 @@ import {
   flexSbC,
   flexCC,
   flexFsC,
+  flexSbFs,
   flexColumnFsFs,
 } from 'constants/styles';
 
@@ -24,7 +25,7 @@ export const OverviewTop = styled.div`
 `;
 
 export const OverviewBottom = styled.div`
-  ${flexSbC}
+  ${flexSbFs}
   width: 100%;
   padding-right: ${getSizeWrtWidth(15)};
 `;

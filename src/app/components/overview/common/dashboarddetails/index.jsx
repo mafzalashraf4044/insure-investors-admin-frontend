@@ -11,6 +11,11 @@ import {
 } from './styled';
 
 import Steps, { Step } from 'rc-steps';
+import Scrollbar from 'components/common/scrollbar';
+
+import {
+  dashboardDetailsHeight,
+} from 'constants/styles';
 
 export default () => {
 
@@ -38,15 +43,20 @@ export default () => {
       </DashboardDetailTabs>
 
       <TabContent>
-        <Steps direction="vertical" size="small">
-          <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
-          <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
-          <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
-          <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
-          <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
-          <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
-          <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
-        </Steps>
+        <Scrollbar
+          thumbColor="#cfd2e4"
+          height={dashboardDetailsHeight}
+        >
+          <Steps direction="vertical" size="small">
+            <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
+            <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
+            <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
+            <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
+            <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
+            <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
+            <Step icon={<StepBullet />} title="Customer investment strategy added" description="2019-05-24, 09:02" />
+          </Steps>
+        </Scrollbar>
       </TabContent>
     </DashboardDetails>
   );

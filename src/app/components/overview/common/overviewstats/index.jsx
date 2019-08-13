@@ -9,6 +9,7 @@ import {
   OverviewTabTop,
   OverviewTabTitle,
   OverviewTabBottom,
+  CaretIcon,
   OverviewTabTotalPremiumTitle,
   OverviewTabTotalPremiumValue,
   OverviewTabContent,
@@ -72,9 +73,9 @@ export default ({children}) => {
   const [tabIndex, setTabIndex] = useState(-1);
 
   const tabs = [
-    {color: '#edad07'},
-    {color: '#00d69d'},
-    {color: '#896cff'},
+    {title: 'All Policies', color: '#edad07', count: '14'},
+    {title: 'Submissions', color: '#00d69d', count: '03'},
+    {title: 'Expiring', color: '#896cff', count: '05'},
   ];
 
   const renderSubmission = (o, i) => {
@@ -120,13 +121,18 @@ export default ({children}) => {
                 onClick={() => setTabIndex(tabIndex === i ? -1 : i)}
               >
                 <OverviewTabTop>
-                  <OverviewTabTitle>Polices</OverviewTabTitle> 
-                  <Tag bgColor={tab.color}>14</Tag>
+                  <OverviewTabTitle>{tab.title}</OverviewTabTitle> 
+                  <Tag bgColor={tab.color}>{tab.count}</Tag>
                 </OverviewTabTop>
                 <OverviewTabBottom>
                   <OverviewTabTotalPremiumTitle>Total Premium</OverviewTabTotalPremiumTitle> 
                   <OverviewTabTotalPremiumValue>$55,250</OverviewTabTotalPremiumValue> 
                 </OverviewTabBottom>
+
+                <CaretIcon
+                  color={tab.color}
+                  tabActive={tabIndex === i}
+                />
               </OverviewTab>
             ))
           }

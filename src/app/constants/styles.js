@@ -11,6 +11,11 @@ export const contentPaddingHorizontal = 30;
 
 export const headerHeight = (2 * contentPaddingBottom) + headingFontSize;
 
+export const overviewStatsHeight = 140;
+
+export const portfolioSummaryHeight = window.innerHeight - getSizeWrtWidth(headerHeight + overviewStatsHeight + 70 + 75, false);
+export const dashboardDetailsHeight = window.innerHeight - getSizeWrtWidth(headerHeight + overviewStatsHeight + 70 + 80, false);
+
 export const tableHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
 
 export const overviewHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);

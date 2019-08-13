@@ -2,9 +2,6 @@ import React from 'react';
 
 import {
   LeftSidebar,
-  Scrollbars,
-  ThumbVertical,
-  TrackVertical,
 } from './styled';
 
 import Scrollbar from 'components/common/scrollbar';
