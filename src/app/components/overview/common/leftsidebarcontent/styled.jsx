@@ -2,10 +2,6 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 //  icons
-import Customers from 'components/common/icons/Customers';
-import Calendar from 'components/common/icons/Calendar';
-import Lead from 'components/common/icons/Lead';
-
 import EditV2 from 'components/common/icons/EditV2';
 import Company from 'components/common/icons/Company';
 import Phone from 'components/common/icons/Phone';

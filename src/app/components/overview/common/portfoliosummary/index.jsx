@@ -26,8 +26,6 @@ export default () => {
   ];
 
   const renderProperty = (o, i) => {
-    console.log('hello', i);
-    
     return (
       <DescriptionListItem isArray={false} key={i}>  
         <DescriptionListFields>
@@ -51,7 +49,6 @@ export default () => {
       </DescriptionListItem>
     );
   };
-
 
   return (
     <PortfolioSummary>

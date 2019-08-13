@@ -103,6 +103,18 @@ export const flexColumnFsFsWrap = `
   align-items: flex-start;
 `;
 
+export const flexSbFs = `
+  ${flex}
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
+export const flexColumnSbFs = `
+  ${flexColumn}
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
 export const flexCFs = `
   ${flex}
   justify-content: center;

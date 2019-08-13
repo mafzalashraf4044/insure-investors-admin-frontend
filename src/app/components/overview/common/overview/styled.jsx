@@ -14,16 +14,17 @@ import {getSizeWrtWidth} from 'utils/styles';
 
 export const Overview = styled.div`
   ${flexColumnFsFs}
+  margin-right: -${getSizeWrtWidth(15)};
 `;
 
 export const OverviewTop = styled.div`
-  width: calc(100% - ${getSizeWrtWidth(15)});
+  width: 100%;
   margin-bottom: ${getSizeWrtWidth(20)};
   padding-right: ${getSizeWrtWidth(15)};
 `;
 
 export const OverviewBottom = styled.div`
   ${flexSbC}
-  width: calc(100% - ${getSizeWrtWidth(15)});
+  width: 100%;
   padding-right: ${getSizeWrtWidth(15)};
 `;
