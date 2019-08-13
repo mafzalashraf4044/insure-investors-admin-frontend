@@ -22,7 +22,7 @@ export const Header = styled.div`
 
 export const HeaderLeft = styled.div`
   ${flexFsC}
-  height: ${getSizeWrtWidth(headerHeight)};
+  height: ${headerHeight};
 `;
 
 export const Title = styled.h1`

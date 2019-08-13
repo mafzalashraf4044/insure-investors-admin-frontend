@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 //  constants
 import {
-  headerHeight,
   flexSbC,
   flexCC,
   flexFsC,

@@ -9,7 +9,6 @@ import Accordion from 'components/common/icons/Accordion';
 
 //  constants
 import {
-  headerHeight,
   flexSbC,
   flexCC,
   flexFsC,

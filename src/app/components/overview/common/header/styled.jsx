@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
+//  icons
 import Caret from 'components/common/icons/Caret';
 
+//  third party components
 import MaterialMenu from '@material-ui/core/Menu';
 import MaterialMenuItem from '@material-ui/core/MenuItem';
 
 //  constants
 import {
   headerHeight,
+  spacerLg,
   flexSbC,
   flexCC,
   flexFsC,
@@ -23,7 +26,7 @@ export const Header = styled.div`
 
 export const HeaderLeft = styled.div`
   ${flexFsC}
-  height: ${getSizeWrtWidth(headerHeight)};
+  height: ${headerHeight};
 `;
 
 export const Title = styled.h1`
@@ -31,7 +34,7 @@ export const Title = styled.h1`
   line-height: ${getSizeWrtWidth(28)};
   color: #03105c;
   font-weight: 800;
-  margin: 0 ${getSizeWrtWidth(30)} 0 0;
+  margin: 0 ${spacerLg} 0 0;
 `;
 
 export const HeaderRight = styled.div``;

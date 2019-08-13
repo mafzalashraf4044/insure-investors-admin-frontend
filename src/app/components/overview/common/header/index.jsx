@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 //  styled components
 import {
@@ -16,15 +16,15 @@ import {
 
 export default () => {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleClick = (event) => {
-    event.stopPropagation();
-    setAnchorEl(event.currentTarget);
+  const handleClick = (e) => {
+    e.stopPropagation();
+    setAnchorEl(e.currentTarget);
   }
 
-  const handleClose = (event) => {
-    event.stopPropagation();
+  const handleClose = (e) => {
+    e.stopPropagation();
     setAnchorEl(null);
   }
 

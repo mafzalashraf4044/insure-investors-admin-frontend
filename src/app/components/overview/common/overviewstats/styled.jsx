@@ -5,7 +5,6 @@ import ArrowRight from 'components/common/icons/ArrowRight';
 
 //  constants
 import {
-  headerHeight,
   flexSbC,
   flexCC,
   flexFsC,

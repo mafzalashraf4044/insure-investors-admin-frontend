@@ -7,7 +7,8 @@ export const navWidth = '5vw';
 export const scrollThumbBgDark = '#DD238E';
 export const scrollThumbBgLight = '#CFD2E4';
 
-export const leftSidebarBg = '#03105c';
+export const leftSidebarBg = '#03105C';
+export const pageContentBg = '#FFFFFF';
 export const leftSidebarWidth = '25%'; // 25% of (100% - navWidth)
 export const pageContentWidth = '75%'; // 75% of (100% - navWidth)
 
@@ -17,6 +18,8 @@ export const spacerMd = getSizeWrtWidth(15);
 export const spacerLg = getSizeWrtWidth(30);
 export const spacerXl = getSizeWrtWidth(50);
 
+export const headerHeight = getSizeWrtWidth(128);
+
 
 
 export const headingFontSize = 28;
@@ -24,7 +27,6 @@ export const headingFontSize = 28;
 export const contentPaddingBottom = 50;
 export const contentPaddingHorizontal = 30;
 
-export const headerHeight = (2 * contentPaddingBottom) + headingFontSize;
 
 export const overviewStatsHeight = 140;
 

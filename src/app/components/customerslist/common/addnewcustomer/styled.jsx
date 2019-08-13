@@ -49,7 +49,7 @@ export const CloseIcon = styled(Close)`
 
 export const Header = styled.div`
   ${flexFsC}
-  height: ${getSizeWrtWidth(headerHeight)};
+  height: ${headerHeight};
 `;
 
 export const Title = styled.div`
