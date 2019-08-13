@@ -1,17 +1,23 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 //  icons
 import Dashboard from 'components/common/icons/Dashboard';
 import Lead from 'components/common/icons/Lead';
 import Customers from 'components/common/icons/Customers';
 import Info from 'components/common/icons/Info';
+import Notification from 'components/common/icons/Notification';
+import Settings from 'components/common/icons/Settings';
+import Personal from 'components/common/icons/Personal';
 
 //  constants
 import {
   navWidth,
   navBg,
+  spacerXs,
+  spacerSm,
+  spacerMd,
+  spacerXl,
   flexCC,
   flexColumnSbC,
   flexColumnFsC,
@@ -28,6 +34,15 @@ export const Nav = styled.div`
   box-shadow: 0px 20px 52px rgba(0,0,0,0.25);
 `;
 
+export const HomeIcon = styled(Personal)`
+  width: ${getSizeWrtWidth(40)};
+  height: ${getSizeWrtWidth(40)};
+
+  path {
+    fill: #FFF;
+  }
+`;
+
 export const NavItems = styled.div`
   ${flexColumnFsC}
 `;
@@ -35,7 +50,7 @@ export const NavItems = styled.div`
 export const NavItem = styled(Link)`
   ${flexCC}
   width: ${navWidth};
-  margin: 15px 0;
+  margin: ${spacerMd} 0;
 `;
 
 export const DashboardIcon = styled(Dashboard)`
@@ -79,52 +94,70 @@ export const HomeLink = styled(Link)`
   width: ${navWidth};
   height: ${navWidth};
   background-color: #00a8d2;
-  margin-bottom: 50px;
+  margin-bottom: ${spacerXl};
 `;
 
 export const NavBottom = styled.div`
   ${flexColumnFsC}
-  margin-bottom: 50px;
+  margin-bottom: ${spacerXl};
 `;
 
-export const ActionButton = styled.a`
-  ${flexCC}
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background-color: #9fa5c9;
-  margin: 5px 0;
+export const ActionButton = styled.button`
+  ${flexCC}  
   position: relative;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: ${spacerXs} 0;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
-export const ActionButtonIcon = styled(FontAwesomeIcon)`
-  font-size: 14px;
-  color: #101f77;
+export const NotificationIcon = styled(Notification)`
+  width: ${getSizeWrtWidth(22)};
+  height: ${getSizeWrtWidth(22)};
+`;
+
+export const SettingsIcon = styled(Settings)`
+  width: ${getSizeWrtWidth(22)};
+  height: ${getSizeWrtWidth(22)};
 `;
 
 export const NotificationLabel = styled.div`
   ${flexCC}
   position: absolute;
-  right: -10px;
-  top: -10px;
-  width: 14px;
-  height: 14px;
+  right: -${getSizeWrtWidth(10)};
+  top: -${getSizeWrtWidth(10)};
+  width: ${getSizeWrtWidth(20)};
+  height: ${getSizeWrtWidth(20)};
   border-radius: 50%;
   background-color: #ed5454;
   border: 2px solid #101f77;
 
   span {
     color: #FFF;
-    font-size: 8px;
+    font-size: ${getSizeWrtWidth(10)};
   }
 `;
 
-export const ProfileImage = styled.div`
-  margin: 10px 0;
+export const ProfileImageButton = styled.button`
+  ${flexCC}
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: ${spacerSm} 0;
 
-  img {
-    width: 43px;
-    height: 43px;
-    border-radius: 50%;
+  &:focus {
+    outline: none;
   }
+`;
+
+export const ProfileImage = styled.img`
+  width: ${getSizeWrtWidth(43)};
+  height: ${getSizeWrtWidth(43)};
+  border-radius: 50%;
 `;

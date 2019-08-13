@@ -3,6 +3,7 @@ import React from 'react';
 //  styled components
 import {
   Nav,
+  HomeIcon,
   NavItems,
   NavItem,
   DashboardIcon,
@@ -12,13 +13,12 @@ import {
   HomeLink,
   NavBottom,
   ActionButton,
-  ActionButtonIcon,
+  NotificationIcon,
+  SettingsIcon,
   NotificationLabel,
+  ProfileImageButton,
   ProfileImage,
 } from './styled';
-
-//  icons
-import { faCog, faBell } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
 
@@ -33,7 +33,7 @@ const Navbar = () => {
     <Nav>
       <NavItems>
         <HomeLink to="/">
-          <img src={require('assets/images/icons/home.png')} alt="home icon" />
+          <HomeIcon />
         </HomeLink>
         {
           navItems.map((navItem, i) => (
@@ -45,18 +45,21 @@ const Navbar = () => {
       </NavItems>
       <NavBottom>
         <ActionButton href="#">
-          <ActionButtonIcon icon={faCog} />
+          <SettingsIcon />
         </ActionButton>
         <ActionButton href="#">
           <NotificationLabel>
             <span>2</span>
           </NotificationLabel>
-          <ActionButtonIcon icon={faBell} />
+          <NotificationIcon />
         </ActionButton>
 
-        <ProfileImage href="#">
-          <img src={require('assets/images/profile-image.jpg')} alt="profile image" />
-        </ProfileImage>
+        <ProfileImageButton>
+          <ProfileImage
+            src={require('assets/images/profile-image.jpg')}
+            alt="profile image"
+          />
+        </ProfileImageButton>
       </NavBottom>
     </Nav>
   );

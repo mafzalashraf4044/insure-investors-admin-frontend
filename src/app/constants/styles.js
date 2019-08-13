@@ -4,6 +4,14 @@ import {getSizeWrtWidth} from 'utils/styles';
 export const navWidth = '5vw';
 export const navBg = '#101f77';
 
+export const spacerXs = getSizeWrtWidth(5);
+export const spacerSm = getSizeWrtWidth(10);
+export const spacerMd = getSizeWrtWidth(15);
+export const spacerLg = getSizeWrtWidth(30);
+export const spacerXl = getSizeWrtWidth(50);
+
+
+
 export const headingFontSize = 28;
 
 export const contentPaddingBottom = 50;
@@ -19,6 +27,8 @@ export const dashboardDetailsHeight = window.innerHeight - getSizeWrtWidth(heade
 export const tableHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
 
 export const overviewHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
+
+
 
 export const contentPadding = `
   padding: 0 ${getSizeWrtWidth(contentPaddingHorizontal)} ${getSizeWrtWidth(contentPaddingBottom)} ${getSizeWrtWidth(contentPaddingHorizontal)};
