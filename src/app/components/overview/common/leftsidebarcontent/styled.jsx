@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 //  icons
 import EditV2 from 'components/common/icons/EditV2';
@@ -7,7 +6,6 @@ import Company from 'components/common/icons/Company';
 import Phone from 'components/common/icons/Phone';
 import Email from 'components/common/icons/Email';
 import ArrowRight from 'components/common/icons/ArrowRight';
-
 import CustomerOverview from 'components/common/icons/CustomerOverview';
 import Policies from 'components/common/icons/Policies';
 import Billing from 'components/common/icons/Billing';
@@ -16,30 +14,31 @@ import Documents from 'components/common/icons/Documents';
 
 //  constants
 import {
-  headerHeight,
-  contentPadding,
+  spacerXs,
+  spacerSm,
+  spacerMd,
+  spacerLg,
+  spacerXl,
   flexColumnCC,
-  flexSbC,
   flexFsFs,
   flexFsC,
   flexCC,
   flexColumnFsC,
   flexColumnCFs,
   flexColumnFsFs,
-  textOverflowEllipsis,
 } from 'constants/styles';
 
 //  utils
 import {getSizeWrtWidth} from 'utils/styles'
 
 export const Content = styled.div`
-  ${contentPadding}
+  padding: 0 ${spacerLg} ${spacerXl} ${spacerLg};
 `;
 
 export const Header = styled.div`
   ${flexColumnCC}
   width: 100%;
-  margin-top: ${getSizeWrtWidth(50)};
+  margin-top: ${spacerXl};
   position: relative;
 `;
 
@@ -81,13 +80,13 @@ export const UserFullName = styled.h1`
 export const UserDetails = styled.div`
   ${flexColumnFsFs}
   width: 100%;
-  margin: ${getSizeWrtWidth(30)} 0;
+  margin: ${spacerLg} 0;
 `;
 
 export const UserDetail = styled.div`
   ${flexFsC}
   width: 100%;
-  margin-bottom: ${getSizeWrtWidth(20)};
+  margin-bottom: calc(${spacerSm} + ${spacerSm});
 `;
 
 export const UserDetailIconBg = styled.div`
@@ -127,14 +126,14 @@ export const EmailIcon = styled(Email)`
 
 export const UserDetailContent = styled.div`
   ${flexColumnCFs}
-  margin-left: ${getSizeWrtWidth(15)};
+  margin-left: ${spacerMd};
 `;
 
 export const UserDetailTitle = styled.div`
   font-size: ${getSizeWrtWidth(12)};
   color: #00a8d2;
   font-weight: 400;
-  margin-bottom: ${getSizeWrtWidth(5)};
+  margin-bottom: ${spacerXs};
 `;
 
 export const UserDetailValue = styled.div`
@@ -160,7 +159,7 @@ export const MoreInfoButtonText = styled.div`
   line-height: ${getSizeWrtWidth(16)};
   color: #00a8d2;
   font-weight: 400;
-  margin-right: ${getSizeWrtWidth(5)};
+  margin-right: ${spacerXs};
 `;
 
 export const ArrowRightIcon = styled(ArrowRight)`
@@ -175,8 +174,8 @@ export const ArrowRightIcon = styled(ArrowRight)`
 export const NavItems = styled.div`
   ${flexColumnFsC}
   border-top: 1px solid #293373;
-  margin-bottom: ${getSizeWrtWidth(50)};
-  margin: 0 -${getSizeWrtWidth(30)};
+  margin-bottom: ${spacerXl};
+  margin: 0 -${spacerLg};
 `;
   
 export const NavItem = styled.div`
@@ -184,7 +183,7 @@ export const NavItem = styled.div`
   width: 100%;
   cursor: pointer;
   border-bottom: 1px solid #293373;
-  padding: ${getSizeWrtWidth(15)} ${getSizeWrtWidth(30)};
+  padding: ${spacerMd} ${spacerLg};
 
   &:hover {
     background-color: #dc248d32;

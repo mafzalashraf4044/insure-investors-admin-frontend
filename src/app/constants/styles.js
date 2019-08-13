@@ -1,8 +1,15 @@
 //  utils
 import {getSizeWrtWidth} from 'utils/styles';
 
-export const navWidth = '5vw';
 export const navBg = '#101f77';
+export const navWidth = '5vw';
+
+export const scrollThumbBgDark = '#DD238E';
+export const scrollThumbBgLight = '#CFD2E4';
+
+export const leftSidebarBg = '#03105c';
+export const leftSidebarWidth = '25%'; // 25% of (100% - navWidth)
+export const pageContentWidth = '75%'; // 75% of (100% - navWidth)
 
 export const spacerXs = getSizeWrtWidth(5);
 export const spacerSm = getSizeWrtWidth(10);

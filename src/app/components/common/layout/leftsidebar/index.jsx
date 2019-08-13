@@ -1,15 +1,22 @@
 import React from 'react';
 
+//  styled components
 import {
   LeftSidebar,
 } from './styled';
 
+//  custom components
 import Scrollbar from 'components/common/scrollbar';
+
+//  constants
+import {
+  scrollThumbBgDark,
+} from 'constants/styles';
 
 export default ({children}) => (
   <LeftSidebar>
     <Scrollbar
-      thumbColor="#DD238E"
+      thumbColor={scrollThumbBgDark}
       height={window.innerHeight}
     >
       {children}

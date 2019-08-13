@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
+//  constants
+import {
+  leftSidebarBg,
+  leftSidebarWidth,
+} from 'constants/styles';
+
 export const LeftSidebar = styled.div`
-  width: 25%;
+  width: ${leftSidebarWidth};
   height: 100%;
-  background-color: #03105c;
+  background-color: ${leftSidebarBg};
 `;

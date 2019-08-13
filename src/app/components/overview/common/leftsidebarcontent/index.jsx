@@ -28,15 +28,13 @@ import {
   SubmissionIcon,
   DocumentsIcon,
   NavItemTitle
-
 } from './styled';
 
-//  icons
-import { faDotCircle } from '@fortawesome/free-solid-svg-icons';
-
+//  custom components
 import Tag from 'components/common/tag';
 
 const LeftSidebarContent = () => {
+
   const navItems = [
     {title: 'Customers Overview', icon: <CustomerOverviewIcon />},
     {title: 'Policies', icon: <PoliciesIcon />},
@@ -52,7 +50,10 @@ const LeftSidebarContent = () => {
         <EditV2Icon />
       </EditButton>
       <Header>
-        <UserProfileImage src={require('assets/images/profile-image.jpg')} alt="user profile image" />
+        <UserProfileImage
+          src={require('assets/images/profile-image.jpg')}
+          alt="user profile image"
+        />
         <UserFullName>Donald G Nielsen</UserFullName>
         <Tag bgColor="#00a8d2">Customer</Tag>
       </Header>
