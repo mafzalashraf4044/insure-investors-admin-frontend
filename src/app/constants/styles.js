@@ -14,30 +14,27 @@ export const pageContentWidth = '75%'; // 75% of (100% - navWidth)
 
 export const spacerXs = getSizeWrtWidth(5);
 export const spacerSm = getSizeWrtWidth(10);
+export const spacerSm2x = getSizeWrtWidth(20);
 export const spacerMd = getSizeWrtWidth(15);
 export const spacerLg = getSizeWrtWidth(30);
 export const spacerXl = getSizeWrtWidth(50);
 
 export const headerHeight = getSizeWrtWidth(128);
+export const headerHeightNumeric = getSizeWrtWidth(128, false);
+export const overviewHeight = window.innerHeight - headerHeightNumeric;
+export const overviewStatsHeight = getSizeWrtWidth(140);
+export const overviewStatsHeightNumeric = getSizeWrtWidth(140, false);
+export const portfolioSummaryHeight = window.innerHeight - headerHeightNumeric - overviewStatsHeightNumeric - getSizeWrtWidth(145, false); //header and padding
+export const dashboardDetailsHeight = window.innerHeight - headerHeightNumeric - overviewStatsHeightNumeric - getSizeWrtWidth(145, false); //header and padding
+export const tableHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
+
+
 
 
 
 export const headingFontSize = 28;
-
 export const contentPaddingBottom = 50;
 export const contentPaddingHorizontal = 30;
-
-
-export const overviewStatsHeight = 140;
-
-export const portfolioSummaryHeight = window.innerHeight - getSizeWrtWidth(headerHeight + overviewStatsHeight + 70 + 75, false);
-export const dashboardDetailsHeight = window.innerHeight - getSizeWrtWidth(headerHeight + overviewStatsHeight + 70 + 80, false);
-
-export const tableHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
-
-export const overviewHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
-
-
 
 export const contentPadding = `
   padding: 0 ${getSizeWrtWidth(contentPaddingHorizontal)} ${getSizeWrtWidth(contentPaddingBottom)} ${getSizeWrtWidth(contentPaddingHorizontal)};

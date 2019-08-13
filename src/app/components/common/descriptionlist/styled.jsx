@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 //  constants
 import {
-  flexCC,
+  spacerSm,
+  spacerMd,
+  spacerLg,
   flexSbC,
   flexFsC,
   flexFsFs,
@@ -15,10 +17,10 @@ import {getSizeWrtWidth} from 'utils/styles'
 
 export const DescriptionList = styled.div`
   width: 100%;
-  padding: ${getSizeWrtWidth(15)};
+  padding: ${spacerMd};
   border-radius: 5px;
   background-color: #eeeeee;
-  margin-bottom: ${getSizeWrtWidth(15)};
+  margin-bottom: ${spacerMd};
 `;
 
 export const DescriptionListTitle = styled.h2`
@@ -30,13 +32,13 @@ export const DescriptionListTitle = styled.h2`
 export const DescriptionListItem = styled.div`
   ${flexSbC}
   width: 100%;
-  margin-bottom: ${props => props.isArray ? getSizeWrtWidth(30) : 0};
+  margin-bottom: ${props => props.isArray ? spacerLg : 0};
 `;
 
 export const DescriptionListHeader = styled.div`
   ${flexFsC}
-  padding-right: ${getSizeWrtWidth(30)};
-  margin-right: ${getSizeWrtWidth(15)};
+  padding-right: ${spacerLg};
+  margin-right: ${spacerMd};
   border-right: 1px solid #cfd1dc;
 `;
 
@@ -49,7 +51,7 @@ export const DescriptionListField = styled.div`
   ${flexColumnFsFs}
   ${
     props => props.minWidth ? `
-      margin-bottom: ${getSizeWrtWidth(10)};
+      margin-bottom: ${spacerSm};
       min-width: ${props.minWidth}%;    
     ` : `
       flex: 1;
@@ -61,7 +63,7 @@ export const DescriptionTitle = styled.p`
   font-size: ${getSizeWrtWidth(12)};
   color: #868b96;
   font-weight: 700;
-  margin: 0 0 ${getSizeWrtWidth(10)} 0;
+  margin: 0 0 ${spacerSm} 0;
 `;
 
 export const DescriptionValue = styled.div`

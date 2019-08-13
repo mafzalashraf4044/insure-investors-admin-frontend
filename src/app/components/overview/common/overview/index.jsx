@@ -7,17 +7,16 @@ import {
   OverviewBottom,
 } from './styled';
 
-import Tag from 'components/common/tag';
-import Collapsible from 'react-collapsible';
-import Scrollbar from 'components/common/scrollbar';
-
+//  custom components
 import OverviewStats from '../overviewstats';
 import PortfolioSummary from '../portfoliosummary';
 import DashboardDetails from '../dashboarddetails';
+import Scrollbar from 'components/common/scrollbar';
 
 //  constants
 import {
   overviewHeight,
+  scrollThumbBgDark,
 } from 'constants/styles';
 
 export default () => {
@@ -29,7 +28,7 @@ export default () => {
       <Scrollbar
         key={tabIndex}
         height={overviewHeight}
-        thumbColor={tabIndex !== -1 ? "#DD238E" : "transparent"}
+        thumbColor={tabIndex !== -1 ? scrollThumbBgDark : "transparent"}
       >
         <OverviewTop>
           <OverviewStats tabIndex={tabIndex} setTabIndex={setTabIndex} />

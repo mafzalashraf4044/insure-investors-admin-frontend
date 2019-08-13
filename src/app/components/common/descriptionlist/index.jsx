@@ -1,7 +1,9 @@
 import React from 'react';
 
+//  third party libs
 import {isArray, isObject} from 'lodash';
 
+//  styled components
 import {
   DescriptionList,
   DescriptionListTitle,

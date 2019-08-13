@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+//  icons
 import Caret from 'components/common/icons/Caret';
 import AllPolicies from 'components/common/icons/AllPolicies';
 import Property from 'components/common/icons/Property';
@@ -7,11 +8,14 @@ import GeneralLiability from 'components/common/icons/GeneralLiability';
 import Flood from 'components/common/icons/Flood';
 import BuildersRisk from 'components/common/icons/BuildersRisk';
 
+//  third party components
 import MaterialMenu from '@material-ui/core/Menu';
 import MaterialMenuItem from '@material-ui/core/MenuItem';
 
 //  constants
 import {
+  spacerSm,
+  spacerMd,
   flexCC,
   flexSbC,
 } from 'constants/styles';
@@ -28,8 +32,8 @@ export const DropdownButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
-  margin: 0 0 0 ${getSizeWrtWidth(10)};
+  padding: ${getSizeWrtWidth(spacerSm)};
+  margin: 0;
 
   &:focus {
     outline: none;
@@ -49,7 +53,7 @@ export const MenuItem = styled(MaterialMenuItem)`
     font-size: ${getSizeWrtWidth(14)};
     color: #101f77;
     font-weight: 700;
-    margin: 0 ${getSizeWrtWidth(15)} 0 0;
+    margin: 0 ${spacerMd} 0 0;
   }
 `;
 
@@ -65,7 +69,7 @@ export const DropdownCaretIcon = styled(Caret)`
 export const AllPoliciesIcon = styled(AllPolicies)`
   width: ${getSizeWrtWidth(20)};
   height: ${getSizeWrtWidth(20)};
-  margin-right: ${getSizeWrtWidth(10)};
+  margin-right: ${spacerSm};
 
   path {
     fill: #00a8d2;
@@ -75,7 +79,7 @@ export const AllPoliciesIcon = styled(AllPolicies)`
 export const PropertyIcon = styled(Property)`
   width: ${getSizeWrtWidth(20)};
   height: ${getSizeWrtWidth(20)};
-  margin-right: ${getSizeWrtWidth(10)};
+  margin-right: ${spacerSm};
 
   path {
     fill: #00a8d2;
@@ -85,7 +89,7 @@ export const PropertyIcon = styled(Property)`
 export const GeneralLiabilityIcon = styled(GeneralLiability)`
   width: ${getSizeWrtWidth(20)};
   height: ${getSizeWrtWidth(20)};
-  margin-right: ${getSizeWrtWidth(10)};
+  margin-right: ${spacerSm};
 
   path {
     fill: #00a8d2;
@@ -95,7 +99,7 @@ export const GeneralLiabilityIcon = styled(GeneralLiability)`
 export const FloodIcon = styled(Flood)`
   width: ${getSizeWrtWidth(20)};
   height: ${getSizeWrtWidth(20)};
-  margin-right: ${getSizeWrtWidth(10)};
+  margin-right: ${spacerSm};
 
   path {
     fill: #00a8d2;
@@ -105,7 +109,7 @@ export const FloodIcon = styled(Flood)`
 export const BuildersRiskIcon = styled(BuildersRisk)`
   width: ${getSizeWrtWidth(20)};
   height: ${getSizeWrtWidth(20)};
-  margin-right: ${getSizeWrtWidth(10)};
+  margin-right: ${spacerSm};
 
   path {
     fill: #00a8d2;

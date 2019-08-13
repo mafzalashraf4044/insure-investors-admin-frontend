@@ -15,7 +15,7 @@ import Documents from 'components/common/icons/Documents';
 //  constants
 import {
   spacerXs,
-  spacerSm,
+  spacerSm2x,
   spacerMd,
   spacerLg,
   spacerXl,
@@ -86,7 +86,7 @@ export const UserDetails = styled.div`
 export const UserDetail = styled.div`
   ${flexFsC}
   width: 100%;
-  margin-bottom: calc(${spacerSm} + ${spacerSm});
+  margin-bottom: ${spacerSm2x};
 `;
 
 export const UserDetailIconBg = styled.div`
@@ -167,7 +167,7 @@ export const ArrowRightIcon = styled(ArrowRight)`
   height: ${getSizeWrtWidth(16)};
 
   path {
-    fill: #00d69d;
+    fill: #00a8d2;
   }
 `;
 

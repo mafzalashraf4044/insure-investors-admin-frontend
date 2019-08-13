@@ -30,11 +30,6 @@ import {
   BillingDetailsValue,
 } from './styled';
 
-import TabMenu from './tabmenu';
-import Tag from 'components/common/tag';
-import Collapsible from 'react-collapsible';
-
-import DescriptionList from 'components/common/descriptionlist'; 
 import {
   DescriptionListItem,
   DescriptionListHeader,
@@ -43,6 +38,14 @@ import {
   DescriptionTitle,
   DescriptionValue
 } from 'components/common/descriptionlist/styled';
+
+//  custom components
+import TabMenu from './tabmenu';
+import Tag from 'components/common/tag';
+import DescriptionList from 'components/common/descriptionlist'; 
+
+//  third party components
+import Collapsible from 'react-collapsible';
 
 const submissions = [
   {
@@ -69,7 +72,7 @@ const submissions = [
   },
 ];
 
-export default ({children, tabIndex, setTabIndex}) => {
+export default ({tabIndex, setTabIndex}) => {
 
   const tabs = [
     {title: 'All Policies', color: '#edad07', count: '14', withDropdown: true},

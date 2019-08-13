@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 //  constants
 import {
+  spacerXs,
   flexCC,
 } from 'constants/styles';
 
@@ -11,9 +12,9 @@ import {getSizeWrtWidth} from 'utils/styles';
 export const Tag = styled.div`
   ${flexCC}
   border-radius: 2px;
-  margin-right: ${getSizeWrtWidth(5)};
+  margin-right: ${spacerXs};
   background-color: ${props => props.bgColor};
-  padding: ${getSizeWrtWidth(2)} ${getSizeWrtWidth(5)};
+  padding: ${getSizeWrtWidth(2)} ${spacerXs};
 `;
 
 export const TagText = styled.span`

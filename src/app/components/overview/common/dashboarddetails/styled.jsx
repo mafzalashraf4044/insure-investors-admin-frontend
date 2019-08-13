@@ -2,16 +2,17 @@ import styled from 'styled-components';
 
 //  constants
 import {
+  spacerSm,
+  spacerMd,
   flexSbC,
   flexCC,
-  flexFsC,
 } from 'constants/styles';
 
 //  utils
 import {getSizeWrtWidth} from 'utils/styles';
 
 export const DashboardDetails = styled.div`
-  width: calc(30% - ${getSizeWrtWidth(10)});
+  width: calc(30% - ${spacerSm});
   border-radius: 4px;
   background-color: #FFF;
 `;
@@ -19,6 +20,7 @@ export const DashboardDetails = styled.div`
 export const DashboardDetailTabs = styled.div`
   ${flexSbC}
   width: 100%;
+  height: ${getSizeWrtWidth(45)};
   box-shadow: inset 0 -1px #e1e5e9;
 `;
 
@@ -26,8 +28,7 @@ export const DashboardDetailTab = styled.div`
   ${flexCC}
   flex: 1;
   cursor: pointer;
-  margin: 0 ${getSizeWrtWidth(15)};
-  padding: ${getSizeWrtWidth(15)} 0;
+  padding: ${spacerMd} 0;
   box-shadow: ${props => props.active ? 'inset 0 -4px #03105c' : 'none'};
 `;
 
@@ -39,7 +40,7 @@ export const DashboardDetailTabText = styled.div`
 `;
 
 export const TabContent = styled.div`
-  padding: ${getSizeWrtWidth(15)};
+  padding: ${spacerMd};
   margin-right: -${getSizeWrtWidth(12)};
 
   .rc-steps-item-title {

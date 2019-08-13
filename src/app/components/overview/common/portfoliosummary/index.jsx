@@ -29,17 +29,18 @@ import {
   DescriptionTitle,
   DescriptionValue
 } from 'components/common/descriptionlist/styled';
+
+//  custom components
 import Scrollbar from 'components/common/scrollbar';
 
+//  constants
 import {
   portfolioSummaryHeight,
 } from 'constants/styles';
 
 export default () => {
 
-  const properties = [
-    {}, {}, {}, {}, {},
-  ];
+  const properties = [{}, {}, {}, {}, {}]; // description list accepts array of objects
 
   const renderProperty = (o, i) => {
     return (

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+//  icons
 import Add from 'components/common/icons/Add';
 import Flood from 'components/common/icons/Flood';
 import GeneralLiability from 'components/common/icons/GeneralLiability';
@@ -9,6 +10,9 @@ import Accordion from 'components/common/icons/Accordion';
 
 //  constants
 import {
+  spacerXs,
+  spacerSm,
+  spacerMd,
   flexSbC,
   flexCC,
   flexFsC,
@@ -18,16 +22,16 @@ import {
 import {getSizeWrtWidth} from 'utils/styles';
 
 export const PortfolioSummary = styled.div`
-  width: calc(70% - ${getSizeWrtWidth(10)});
+  width: calc(70% - ${spacerSm});
   border-radius: 4px;
   background-color: #FFF;
-  padding: ${getSizeWrtWidth(15)};
+  padding: ${spacerMd};
 `;
 
 export const Header = styled.div`
   ${flexSbC}
   width: 100%;
-  margin-bottom: ${getSizeWrtWidth(15)};
+  margin-bottom: ${spacerMd};
 `;
 
 export const Title = styled.div`
@@ -62,7 +66,7 @@ export const AddPropertyButtonText = styled.p`
   line-height: ${getSizeWrtWidth(30)};
   color: #191f2a;
   font-weight: 600;
-  margin: 0 0 0 ${getSizeWrtWidth(5)};
+  margin: 0 0 0 ${spacerXs};
 `;
 
 export const PortfolioContent = styled.div`
@@ -75,12 +79,12 @@ export const PortfolioList = styled.div`
 
 export const CoveragePremiums = styled.div`
   ${flexFsC}
-  margin-right: ${getSizeWrtWidth(15)};
+  margin-right: ${spacerMd};
 `;
 
 export const CoveragePremium = styled.div`
   ${flexFsC}
-  margin: 0 ${getSizeWrtWidth(15)} 0 0;
+  margin: 0 ${spacerMd} 0 0;
 `;
 
 export const FloodIcon = styled(Flood)`
@@ -123,7 +127,7 @@ export const CoveragePremiumValue = styled.p`
   font-size: ${getSizeWrtWidth(14)};
   color: #525c6e;
   font-weight: 700;
-  margin: 0 0 0 ${getSizeWrtWidth(5)};
+  margin: 0 0 0 ${spacerXs};
 `;
 
 export const ExpandButton = styled.button`

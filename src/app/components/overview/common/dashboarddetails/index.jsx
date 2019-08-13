@@ -10,9 +10,13 @@ import {
   StepBullet,
 } from './styled';
 
-import Steps, { Step } from 'rc-steps';
+//  custom components
 import Scrollbar from 'components/common/scrollbar';
 
+//  third party components
+import Steps, { Step } from 'rc-steps';
+
+//  constants
 import {
   dashboardDetailsHeight,
 } from 'constants/styles';

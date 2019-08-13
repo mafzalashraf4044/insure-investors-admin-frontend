@@ -1,5 +1,6 @@
 import React from 'react';
 
+//  styled components
 import {
   TabMenu,
   DropdownButton,
@@ -25,13 +26,13 @@ export default () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
-    event.stopPropagation();
-    setAnchorEl(event.currentTarget);
+  const handleClick = (e) => {
+    e.stopPropagation();
+    setAnchorEl(e.currentTarget);
   }
 
-  const handleClose = (event) => {
-    event.stopPropagation();
+  const handleClose = (e) => {
+    e.stopPropagation();
     setAnchorEl(null);
   }
 
@@ -63,7 +64,6 @@ export default () => {
           ))
         }
       </Menu>
-
     </TabMenu>
   );
 };

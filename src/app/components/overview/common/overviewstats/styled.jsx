@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
+//  icons
 import Caret from 'components/common/icons/Caret';
 import ArrowRight from 'components/common/icons/ArrowRight';
 
 //  constants
 import {
+  spacerXs,
+  spacerSm,
+  spacerMd,
+  overviewStatsHeight,
   flexSbC,
-  flexCC,
   flexFsC,
   flexColumnFsFs,
   flexColumnSbC,
@@ -17,18 +21,18 @@ import {
 import {getSizeWrtWidth} from 'utils/styles';
 
 export const OverviewStats = styled.div`
-  width: 100
+  width: 100%;
 `;
 
 export const OverviewStatsTop = styled.div`
   ${flexSbC}
-  width: 100
+  width: 100%;
 `;
 
 export const OverviewTabs = styled.div`
   ${flexSbC}
-  width: calc(70% - ${getSizeWrtWidth(10)});
-  height: ${getSizeWrtWidth(140)};
+  width: calc(70% - ${spacerSm});
+  height: ${overviewStatsHeight};
 `;
 
 export const OverviewTab = styled.div`
@@ -39,7 +43,7 @@ export const OverviewTab = styled.div`
   border-radius: 4px;
   cursor: pointer;
   position: relative;
-  padding: ${getSizeWrtWidth(15)};
+  padding: ${spacerMd};
   border-bottom: 15px solid ${props => props.active ? 'transparent' : props.borderColor};
   box-shadow: ${props => props.active ? '0 15px #FFF' : 'none'};
 `;
@@ -53,7 +57,7 @@ export const OverviewTabTitle = styled.h2`
   font-size: ${getSizeWrtWidth(20)};
   color: #101f77;
   font-weight: 700;
-  margin: 0 ${getSizeWrtWidth(15)} 0 0;
+  margin: 0 ${spacerMd} 0 0;
 `;
 
 export const OverviewTabBottom = styled.div`
@@ -65,7 +69,7 @@ export const TabCaretIcon = styled(Caret)`
   width: ${getSizeWrtWidth(12)};
   height: ${getSizeWrtWidth(12)};
   position: absolute;
-  bottom: -${getSizeWrtWidth(15)};
+  bottom: -${spacerMd};
   transform: rotate(${props => props.tabActive ? 180 : 0}deg);
 
   path {
@@ -77,7 +81,7 @@ export const OverviewTabTotalPremiumTitle = styled.p`
   font-size: ${getSizeWrtWidth(12)};
   color: #777777;
   font-weight: 700;
-  margin: 0 0 ${getSizeWrtWidth(5)} 0;
+  margin: 0 0 ${spacerXs} 0;
 `;
 
 export const OverviewTabTotalPremiumValue = styled.p`
@@ -88,25 +92,22 @@ export const OverviewTabTotalPremiumValue = styled.p`
 `;
 
 export const OverviewTabContent = styled.div`
-  padding: ${getSizeWrtWidth(15)};
+  padding: ${spacerMd};
   background-color: #FFF;
   border-radius: 4px;
-  margin-top: ${getSizeWrtWidth(15)};
+  margin-top: ${spacerMd};
   border-bottom: 15px solid ${props => props.borderColor};
 `;
 
-export const SubmissionItemHeader = styled.div`
+export const SubmissionItemHeader = styled.div``;
 
-`;
-
-export const SubmissionItemHeaderTop = styled.div`
-`;
+export const SubmissionItemHeaderTop = styled.div``;
 
 export const SubmissionItemId = styled.div`
   font-size: ${getSizeWrtWidth(18)};
   color: #525c6e;
   font-weight: 700;
-  margin: 0 0 ${getSizeWrtWidth(5)} 0;
+  margin: 0 0 ${spacerXs} 0;
 `;
 
 export const SubmissionItemHeaderBottom = styled.div`
@@ -115,11 +116,11 @@ export const SubmissionItemHeaderBottom = styled.div`
 
 export const BillingInformation = styled.div`
   ${flexColumnSbFs}
-  width: calc(30% - ${getSizeWrtWidth(10)});
-  height: ${getSizeWrtWidth(140)};
+  width: calc(30% - ${spacerSm});
+  height: ${overviewStatsHeight};
   border-radius: 4px;
   background-color: #FFF;
-  padding: ${getSizeWrtWidth(15)};
+  padding: ${spacerMd};
 `;
 
 export const BillingInformationTop = styled.div`
@@ -150,7 +151,7 @@ export const MoreInfoButtonText = styled.div`
   line-height: ${getSizeWrtWidth(16)};
   color: #00a8d2;
   font-weight: 400;
-  margin-right: ${getSizeWrtWidth(5)};
+  margin-right: ${spacerXs};
 `;
 
 export const ArrowRightIcon = styled(ArrowRight)`
@@ -158,7 +159,7 @@ export const ArrowRightIcon = styled(ArrowRight)`
   height: ${getSizeWrtWidth(16)};
 
   path {
-    fill: #00d69d;
+    fill: #00a8d2;
   }
 `;
 
