@@ -6,13 +6,27 @@ import {
   OverviewStatsTop,
   OverviewTabs,
   OverviewTab,
+  OverviewTabTop,
+  OverviewTabTitle,
+  OverviewTabBottom,
+  OverviewTabTotalPremiumTitle,
+  OverviewTabTotalPremiumValue,
   OverviewTabContent,
   SubmissionItemHeader,
   SubmissionItemHeaderTop,
   SubmissionItemId,
   SubmissionItemHeaderBottom,
-  OverviewStatsBottom,
   BillingInformation,
+  BillingInformationTop,
+  BillingInformationTitle,
+  MoreInfoButton,
+  MoreInfoButtonText,
+  ArrowRightIcon,
+  BillingInformationText,
+  BillingInformationBottom,
+  BillingDetailColumn,
+  BillingDetailTitle,
+  BillingDetailsValue,
 } from './styled';
 
 import Tag from 'components/common/tag';
@@ -58,9 +72,9 @@ export default ({children}) => {
   const [tabIndex, setTabIndex] = useState(-1);
 
   const tabs = [
-    {borderColor: '#edad07'},
-    {borderColor: '#00d69d'},
-    {borderColor: '#896cff'},
+    {color: '#edad07'},
+    {color: '#00d69d'},
+    {color: '#896cff'},
   ];
 
   const renderSubmission = (o, i) => {
@@ -102,21 +116,45 @@ export default ({children}) => {
               <OverviewTab
                 key={i}
                 active={tabIndex === i}
-                borderColor={tab.borderColor}
+                borderColor={tab.color}
                 onClick={() => setTabIndex(tabIndex === i ? -1 : i)}
               >
-                {i}
+                <OverviewTabTop>
+                  <OverviewTabTitle>Polices</OverviewTabTitle> 
+                  <Tag bgColor={tab.color}>14</Tag>
+                </OverviewTabTop>
+                <OverviewTabBottom>
+                  <OverviewTabTotalPremiumTitle>Total Premium</OverviewTabTotalPremiumTitle> 
+                  <OverviewTabTotalPremiumValue>$55,250</OverviewTabTotalPremiumValue> 
+                </OverviewTabBottom>
               </OverviewTab>
             ))
           }
         </OverviewTabs>
         <BillingInformation>
-          billing info
+          <BillingInformationTop>
+            <BillingInformationTitle>Billing Information</BillingInformationTitle>
+            <MoreInfoButton>
+              <MoreInfoButtonText>More Info</MoreInfoButtonText>
+              <ArrowRightIcon />
+            </MoreInfoButton>
+          </BillingInformationTop>
+          <BillingInformationText>Monthly 25 Down 10 Installments</BillingInformationText>
+          <BillingInformationBottom>
+            <BillingDetailColumn>
+              <BillingDetailTitle>Balance due</BillingDetailTitle>
+              <BillingDetailsValue>$764.65</BillingDetailsValue>
+            </BillingDetailColumn>
+            <BillingDetailColumn>
+              <BillingDetailTitle>Number of installments</BillingDetailTitle>
+              <BillingDetailsValue>5</BillingDetailsValue>
+            </BillingDetailColumn>
+          </BillingInformationBottom>
         </BillingInformation>
       </OverviewStatsTop>
       <Collapsible open={tabIndex !== -1}>
         <OverviewTabContent
-          borderColor={tabIndex !== -1 && tabs[tabIndex].borderColor}
+          borderColor={tabIndex !== -1 && tabs[tabIndex].color}
         >
           {
             submissions.map((submission, i) => (
@@ -128,9 +166,6 @@ export default ({children}) => {
           }
         </OverviewTabContent>
       </Collapsible>
-      <OverviewStatsBottom>
-
-      </OverviewStatsBottom>
     </OverviewStats>
   );
 };
