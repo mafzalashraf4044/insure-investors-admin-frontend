@@ -8,9 +8,9 @@ import {
 } from './styled';
 
 //  custom components
-import OverviewStats from '../overviewstats';
-import PortfolioSummary from '../portfoliosummary';
-import DashboardDetails from '../dashboarddetails';
+import OverviewStats from './overviewstats';
+import PortfolioSummary from './portfoliosummary';
+import DashboardDetails from './dashboarddetails';
 import Scrollbar from 'components/common/scrollbar';
 
 //  constants
