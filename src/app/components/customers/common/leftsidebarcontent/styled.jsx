@@ -9,19 +9,19 @@ import Lead from 'components/common/icons/Lead';
 //  constants
 import {
   headerHeight,
-  contentPadding,
-  flexSbC,
+  spacerMd,
+  spacerLg,
+  spacerXl,
   flexFsFs,
   flexFsC,
   flexColumnFsC,
-  textOverflowEllipsis,
 } from 'constants/styles';
 
 //  utils
 import {getSizeWrtWidth} from 'utils/styles'
 
 export const Content = styled.div`
-  ${contentPadding}
+  padding: 0 ${spacerLg} ${spacerXl} ${spacerLg};
 `;
 
 export const Header = styled.div`
@@ -39,15 +39,15 @@ export const Title = styled.h1`
 
 export const MainItems = styled.div`
   ${flexColumnFsC}
-  margin-bottom: ${getSizeWrtWidth(50)};
+  margin-bottom: ${spacerXl};
 `;
   
 export const MainItem = styled.div`
   ${flexFsFs}
   width: 100%;
   border-bottom: 1px solid #293373;
-  margin-bottom: ${getSizeWrtWidth(15)};
-  padding-bottom: ${getSizeWrtWidth(15)};
+  margin-bottom: ${spacerMd};
+  padding-bottom: ${spacerMd};
 `;
 
 export const CustomersIcon = styled(Customers)`
@@ -78,7 +78,7 @@ export const LeadIcon = styled(Lead)`
 `;
 
 export const MainItemRight = styled.div`
-  margin-left: ${getSizeWrtWidth(15)};
+  margin-left: ${spacerMd};
 `;
 
 export const MainItemTitle = styled.p`
@@ -94,43 +94,3 @@ export const MainItemValue = styled.p`
   font-weight: 700;
   margin: 0;
 `;
-
-export const List = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-`;
-
-export const ListItem = styled.li`
-  ${flexSbC}
-  width: 100%;
-  min-height: ${getSizeWrtWidth(34)};
-  margin-bottom: ${props => props.withMarginBottom ? getSizeWrtWidth(15) : '0px'};
-`;
-
-export const ListItemLeft = styled.div`
-  ${flexFsC}
-`;
-
-export const ListItemBullet = styled(FontAwesomeIcon)`
-  font-size: ${getSizeWrtWidth(14)};
-  color: ${props => props.color};
-`;
-
-export const ListItemTitle = styled.p`
-  ${textOverflowEllipsis}
-  font-size: ${getSizeWrtWidth(14)};
-  color: #8187ad;
-  font-weight: 700;
-  margin: 0 0 0 ${getSizeWrtWidth(10)};
-`;
-
-export const ListItemRight = styled.p`
-  ${textOverflowEllipsis}
-  font-size: ${getSizeWrtWidth(18)};
-  color: #FFF;
-  font-weight: 700;
-  width: 30%;
-  margin: 0;
-`;
-

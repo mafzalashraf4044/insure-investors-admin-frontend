@@ -1,14 +1,21 @@
 import React, {useState} from 'react';
 
-import {isUndefined} from 'lodash';
+// dummy data
+import {customers, policies, submissions} from 'services/dummy-data';
 
+//  third party libs
+import {isUndefined, isArray} from 'lodash';
+
+//  styled components
 import {
   CustomersListTable,
+  TableContainer,
   Customer,
+  CustomerCheckbox,
   CustomerImage,
   CustomerText,
   CustomerName,
-  CustomerSubText,
+  PolicyStatus,
   Actions,
   ActionsLeft,
   ActionsRight,
@@ -29,11 +36,6 @@ import {
   SubmissionItemHeaderBottom
 } from './styled';
 
-import Tag from 'components/common/tag';
-import Table from 'components/common/table';
-import Collapsible from 'react-collapsible';
-import Scrollbar from 'components/common/scrollbar';
-import DescriptionList from 'components/common/descriptionlist'; 
 import {
   DescriptionListItem,
   DescriptionListHeader,
@@ -43,88 +45,44 @@ import {
   DescriptionValue
 } from 'components/common/descriptionlist/styled';
 
+//  third party components
 import {Animated} from 'react-animated-css';
+import Collapsible from 'react-collapsible';
+
+//  custom components
+import Tag from 'components/common/tag';
+import Table from 'components/common/table';
+import Scrollbar from 'components/common/scrollbar';
+import DescriptionList from 'components/common/descriptionlist'; 
 
 //  constants
 import {
   tableHeight,
 } from 'constants/styles';
 
-const data = [
-  {name: 'Brian Roberts', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: 'UW Approved'},
-  {name: 'Benjamin Alexander', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: 'Proposed'},
-  {name: 'Nicole Henderson', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: 'Lost'},
-  {name: 'Brian Roberts', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: 'UW Approved'},
-  {name: 'Laura Hernandez', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: '{Proposed'},
-  {name: 'Stephanie Richardson', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: 'UW Approved'},
-  {name: 'Wanda Jackson', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: 'Proposed'},
-  {name: 'Kevin Mitchell', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: 'Lost'},
-  {name: 'Albert Bennett', tasks: 3, company: 'Benchmark LLC',  phone: '1234567890', department: 'IT Department', annualPremium: '$1,589.54', policyStatus: 'Proposed'},
-];
-
-const polices = [
-  {
-    id: 1234567,
-    details: [
-      {title: 'Effective Date', value: '14 Dec 2018'},
-      {title: 'Expiration Date', value: '14 Dec 2019'},
-      {title: 'Line of Business', value: 'Automobile'},
-      {title: 'Writing Company', value: 'All State'},
-      {title: 'Parent Company', value: 'Nationwide'},
-      {title: 'Annual Premium', value: '$2,500'},
-      {title: 'Billed Premium', value: '$2,500'},
-    ]
-  },
-  {
-    id: 1234567,
-    details: [
-      {title: 'Effective Date', value: '14 Dec 2018'},
-      {title: 'Expiration Date', value: '14 Dec 2019'},
-      {title: 'Line of Business', value: 'Automobile'},
-      {title: 'Writing Company', value: 'All State'},
-      {title: 'Parent Company', value: 'Nationwide'},
-      {title: 'Annual Premium', value: '$2,500'},
-      {title: 'Billed Premium', value: '$2,500'},
-    ]
-  },
-];
-
-const submissions = [
-  {
-    id: 1234567,
-    details: [
-      {title: 'Need by Date', value: '15 Dec 2018'},
-      {title: 'Effective Date', value: '14 Dec 2018'},
-      {title: 'Line of Business', value: 'Automobile'},
-      {title: 'Carriers', value: ['carrier 1', 'carrier 2', '+3']},
-      {title: 'Target Premium', value: '$2,500'},
-      {title: 'Quoted Premium', value: '$2,500'},
-    ]
-  },
-  {
-    id: 1234567,
-    details: [
-      {title: 'Need by Date', value: '15 Dec 2018'},
-      {title: 'Effective Date', value: '14 Dec 2018'},
-      {title: 'Line of Business', value: 'Automobile'},
-      {title: 'Carriers', value: ['carrier 1', 'carrier 2', '+3']},
-      {title: 'Target Premium', value: '$2,500'},
-      {title: 'Quoted Premium', value: '$2,500'},
-    ]
-  },
-];
-
 export default () => {
 
-  const renderCustomer = (o) => (
+  const renderCustomer = (o, hover) => (
     <Customer>
-      <CustomerImage src={require('assets/images/profile-image.jpg')} alt="profile image" />
+      {
+        hover ?
+        <CustomerCheckbox>
+          <input type="checkbox" />
+        </CustomerCheckbox> :
+        <CustomerImage src={require('assets/images/profile-image.jpg')} alt="profile image" />
+      }
       
       <CustomerText>
         <CustomerName>{o.name}</CustomerName>
-        <CustomerSubText>Tasks {o.tasks}</CustomerSubText>
+        <Tag bgColor={o.role.bgColor}>{o.role.title}</Tag>
       </CustomerText>
     </Customer>
+  );
+
+  const renderPolicyStatus = (o) => (
+    <PolicyStatus>
+      <Tag bgColor="#26AED4">{o.policyStatus}</Tag>
+    </PolicyStatus>
   );
     
   const renderActions = (o, hover, onAccordionClick) => (
@@ -210,7 +168,16 @@ export default () => {
             o.details.map((detail, index) => (
               <DescriptionListField key={index}>
                 <DescriptionTitle>{detail.title}</DescriptionTitle>
-                <DescriptionValue>{detail.value}</DescriptionValue>
+                <DescriptionValue>
+                  {
+                    isArray(detail.value) ?
+                    detail.value.map((item, i) => (
+                      <Tag bgColor="#cbcbcb" key={i}>
+                        {item}
+                      </Tag>
+                    )) : detail.value
+                  }
+                </DescriptionValue>
               </DescriptionListField>
             ))
           }
@@ -252,7 +219,7 @@ export default () => {
 
         <DescriptionList
           title="Polices"
-          data={polices}
+          data={policies}
           renderListItem={renderPolicy}
         />
 
@@ -267,12 +234,12 @@ export default () => {
   );
 
   const columns = [
-    {title: 'Customer Name', render: renderCustomer},
-    {title: 'Company Name', render: o => o.company},
-    {title: 'Customer Number', render: o => o.phone},
-    {title: 'Department', render: o => o.department},
-    {title: 'Annual Premium', render: o => o.annualPremium},
-    {title: 'Policy Status', render: o => o.policyStatus},
+    {title: 'Customer', render: renderCustomer},
+    {title: 'Company', render: o => o.company},
+    {title: 'Date Added', render: o => o.date},
+    {title: 'Expiry Date', render: o => o.expiry},
+    {title: 'Premium', render: o => o.premium},
+    {title: 'Policy Status', render: renderPolicyStatus},
     {isActions: true, render: renderActions},
   ];
 
@@ -282,11 +249,13 @@ export default () => {
         thumbColor="#E7F1F3"
         height={tableHeight}
       >
-        <Table
-          data={data}
-          columns={columns}
-          renderRowDetails={renderRowDetails}
-        />
+        <TableContainer>
+          <Table
+            data={customers}
+            columns={columns}
+            renderRowDetails={renderRowDetails}
+          />
+        </TableContainer>
       </Scrollbar>
     </CustomersListTable>
   );

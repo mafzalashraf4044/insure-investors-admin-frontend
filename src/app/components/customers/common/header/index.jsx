@@ -5,43 +5,25 @@ import {
   Header,
   HeaderLeft,
   Title,
-  SearchBox,
-  SearchIcon,
-  SearchInput,
-  FilterButton,
-  FilterIcon,
   HeaderRight,
 } from './styled';
 
 import Button from 'components/common/button';
 
-export default ({toggleSidebar}) => {
+export default () => {
 
   return (
     <Header>
       <HeaderLeft>
-        <Title>Customers List</Title>
-
-        <SearchBox>
-          <SearchIcon />
-          <SearchInput
-            placeholder="Search Customers"
-          />
-        </SearchBox>
-
-        <FilterButton>
-          <FilterIcon />
-          <span>Filter</span>
-        </FilterButton>
+        <Title>Customers</Title>
       </HeaderLeft>
 
       <HeaderRight>
         <Button
-          text="New Customer"
+          text="New Quote"
           bgColor="#dc248d"
           borderColor="#dc248d"
           textColor="#FFF"
-          onClick={toggleSidebar}
         />
       </HeaderRight>
 

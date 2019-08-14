@@ -4,13 +4,19 @@ import React, { useState, useEffect } from 'react';
 import Page from 'components/common/layout/page';
 import LeftSidebar from 'components/common/layout/leftsidebar';
 import PageContent from 'components/common/layout/pagecontent';
+import LeftSidebarContent from './common/leftsidebarcontent';
+import Header from './common/header';
+import CustomersListTable from './common/customerslisttable';
 
 const CustomersPage = () => {  
   return (
     <Page>
-      <LeftSidebar />
+      <LeftSidebar>
+        <LeftSidebarContent />
+      </LeftSidebar>
       <PageContent>
-        <h1>Customers</h1>
+        <Header />
+        <CustomersListTable />
       </PageContent>
     </Page>
   );
