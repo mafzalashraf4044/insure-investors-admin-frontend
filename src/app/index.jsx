@@ -1,3 +1,8 @@
+/**
+ * @author Afzal Ashraf
+ * @email afzalashraf.dev@gmail.com 
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
