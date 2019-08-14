@@ -13,6 +13,7 @@ import {
 } from './styled';
 
 export default ({
+  renderColumn,
   columns,
   data,
   renderRowDetails
@@ -47,9 +48,7 @@ export default ({
                   columns.map((column, iCol) => (
                     <Td key={iCol}>
                       {
-                        !column.isActions ?
-                        column.render(row, iRow === hoveredRowIndex) :
-                        column.render(row, iRow === hoveredRowIndex, () => setExpandedRowIndex(expandedRowIndex === -1 ? iRow : -1))
+                        renderColumn(iCol, row, iRow === hoveredRowIndex, () => setExpandedRowIndex(expandedRowIndex === -1 ? iRow : -1))
                       }
                     </Td>
                   ))
@@ -58,7 +57,7 @@ export default ({
 
               <ExpandableTr>
                 <ExpandableTd colSpan={columns.length}>
-                  {renderRowDetails(iRow === expandedRowIndex)}
+                  {renderRowDetails(row, iRow === expandedRowIndex)}
                 </ExpandableTd>
               </ExpandableTr>
             </React.Fragment>

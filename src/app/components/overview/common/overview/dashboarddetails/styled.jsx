@@ -21,15 +21,15 @@ export const DashboardDetailTabs = styled.div`
   ${flexSbC}
   width: 100%;
   height: ${getSizeWrtWidth(45)};
-  box-shadow: inset 0 -1px #e1e5e9;
+  border: 1px solid #e1e5e9;
 `;
 
 export const DashboardDetailTab = styled.div`
   ${flexCC}
   flex: 1;
+  height: 100%;
   cursor: pointer;
-  padding: ${spacerMd} 0;
-  box-shadow: ${props => props.active ? 'inset 0 -4px #03105c' : 'none'};
+  border-bottom: ${props => props.active ? '4px solid #03105c' : 'none'};
 `;
 
 export const DashboardDetailTabText = styled.div`
@@ -57,7 +57,7 @@ export const TabContent = styled.div`
   }
 
   .rc-steps-icon {
-    top: 0!important;
+    top: 3px!important;
   }
 
   .rc-steps-small .rc-steps-item-content {

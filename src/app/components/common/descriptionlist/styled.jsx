@@ -67,6 +67,7 @@ export const DescriptionTitle = styled.p`
 `;
 
 export const DescriptionValue = styled.div`
+  ${flexFsC}
   font-size: ${getSizeWrtWidth(14)};
   color: #525c6e;
   font-weight: 700;

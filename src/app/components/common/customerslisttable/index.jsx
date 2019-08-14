@@ -1,7 +1,4 @@
-import React, {useState} from 'react';
-
-// dummy data
-import {customers, policies, submissions} from 'services/dummy-data';
+import React from 'react';
 
 //  third party libs
 import {isUndefined, isArray} from 'lodash';
@@ -15,6 +12,7 @@ import {
   CustomerImage,
   CustomerText,
   CustomerName,
+  CustomerSubText,
   PolicyStatus,
   Actions,
   ActionsLeft,
@@ -55,14 +53,14 @@ import Table from 'components/common/table';
 import Scrollbar from 'components/common/scrollbar';
 import DescriptionList from 'components/common/descriptionlist'; 
 
-//  constants
-import {
+export default ({
+  columns,
+  customers,
   tableHeight,
-} from 'constants/styles';
+  showCustomerRole = false,
+}) => {
 
-export default () => {
-
-  const renderCustomer = (o, hover) => (
+  const renderCustomerColumn = (o, hover) => (
     <Customer>
       {
         hover ?
@@ -74,18 +72,22 @@ export default () => {
       
       <CustomerText>
         <CustomerName>{o.name}</CustomerName>
-        <Tag bgColor={o.role.bgColor}>{o.role.title}</Tag>
+        {showCustomerRole && <Tag bgColor={o.role.bgColor}>{o.role.title}</Tag>}
+        
+        {!showCustomerRole && o.tasks && <CustomerSubText color="#00a8d2">{o.tasks} Tasks</CustomerSubText>}
+        {!showCustomerRole && o.activities && <CustomerSubText color="#fb9213">{o.activities} Activities</CustomerSubText>}
+        {!showCustomerRole && o.remarked && <CustomerSubText color="#0aa50a">&#10004; Remarked</CustomerSubText>}
       </CustomerText>
     </Customer>
   );
 
-  const renderPolicyStatus = (o) => (
+  const renderPolicyStatusColumn = (o) => (
     <PolicyStatus>
       <Tag bgColor="#26AED4">{o.policyStatus}</Tag>
     </PolicyStatus>
   );
     
-  const renderActions = (o, hover, onAccordionClick) => (
+  const renderActionsColumn = (o, hover, onAccordionClick) => (
     <Actions>
       <Animated
         isVisible={hover}
@@ -187,7 +189,7 @@ export default () => {
     );
   };
 
-  const renderRowDetails = (open) => (
+  const renderRowDetails = (o, open) => (
     <Collapsible open={open}>
       <RowDetails>
         <RowDetailItems>
@@ -219,13 +221,13 @@ export default () => {
 
         <DescriptionList
           title="Polices"
-          data={policies}
+          data={o.policies}
           renderListItem={renderPolicy}
         />
 
         <DescriptionList
           title="Submissions"
-          data={submissions}
+          data={o.submissions}
           renderListItem={renderSubmission}
         />
 
@@ -233,15 +235,17 @@ export default () => {
     </Collapsible>
   );
 
-  const columns = [
-    {title: 'Customer', render: renderCustomer},
-    {title: 'Company', render: o => o.company},
-    {title: 'Date Added', render: o => o.date},
-    {title: 'Expiry Date', render: o => o.expiry},
-    {title: 'Premium', render: o => o.premium},
-    {title: 'Policy Status', render: renderPolicyStatus},
-    {isActions: true, render: renderActions},
-  ];
+  const renderColumn = (i, o, hover, onAccordionClick) => {
+    if (columns[i].isCustomer) {
+      return renderCustomerColumn(o, hover);
+    } else if (columns[i].isPolicyStatus) {
+      return renderPolicyStatusColumn(o);
+    } else if (columns[i].isActions) {
+      return renderActionsColumn(o, hover, onAccordionClick);
+    }
+
+    return o[columns[i].key];
+  }
 
   return (
     <CustomersListTable>
@@ -253,6 +257,7 @@ export default () => {
           <Table
             data={customers}
             columns={columns}
+            renderColumn={renderColumn}
             renderRowDetails={renderRowDetails}
           />
         </TableContainer>

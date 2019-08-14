@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 //  custom components
 import Page from 'components/common/layout/page';
@@ -6,8 +6,8 @@ import LeftSidebar from 'components/common/layout/leftsidebar';
 import PageContent from 'components/common/layout/pagecontent';
 import LeftSidebarContent from './common/leftsidebarcontent';
 import Header from './common/header';
-import CustomersListTable from './common/customerslisttable';
 import AddNewCustomer from './common/addnewcustomer';
+import CustomersList from './common/customerslist';
 
 const CustomersListPage = () => {    
 
@@ -26,7 +26,7 @@ const CustomersListPage = () => {
         <Header
           toggleSidebar={toggleSidebar}
         />
-        <CustomersListTable />
+        <CustomersList />
       </PageContent>
       <AddNewCustomer
         toggle={toggleSidebar}

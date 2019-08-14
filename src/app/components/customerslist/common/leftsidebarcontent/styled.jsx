@@ -9,9 +9,7 @@ import Lead from 'components/common/icons/Lead';
 //  constants
 import {
   headerHeight,
-  spacerXs,
   spacerSm,
-  spacerSm2x,
   spacerMd,
   spacerLg,
   spacerXl,

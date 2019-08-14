@@ -19,26 +19,18 @@ export const spacerMd = getSizeWrtWidth(15);
 export const spacerLg = getSizeWrtWidth(30);
 export const spacerXl = getSizeWrtWidth(50);
 
-export const headerHeight = getSizeWrtWidth(128);
-export const headerHeightNumeric = getSizeWrtWidth(128, false);
-export const overviewHeight = window.innerHeight - headerHeightNumeric;
+export const headerHeight = getSizeWrtWidth(128); //string with px suffix
+export const headerHeightInPixels = getSizeWrtWidth(128, false);
+export const overviewHeight = window.innerHeight - headerHeightInPixels;
 export const overviewStatsHeight = getSizeWrtWidth(140);
-export const overviewStatsHeightNumeric = getSizeWrtWidth(140, false);
-export const portfolioSummaryHeight = window.innerHeight - headerHeightNumeric - overviewStatsHeightNumeric - getSizeWrtWidth(145, false); //header and padding
-export const dashboardDetailsHeight = window.innerHeight - headerHeightNumeric - overviewStatsHeightNumeric - getSizeWrtWidth(145, false); //header and padding
-export const tableHeight = window.innerHeight - getSizeWrtWidth(128 + 50, false);
+export const overviewStatsHeightInPixels = getSizeWrtWidth(140, false);
+export const portfolioSummaryHeight = window.innerHeight - headerHeightInPixels - overviewStatsHeightInPixels - getSizeWrtWidth(145, false); //145 = heading and padding
+export const dashboardDetailsHeight = window.innerHeight - headerHeightInPixels - overviewStatsHeightInPixels - getSizeWrtWidth(145, false); //145 = heading and padding
 
-
-
-
-
-export const headingFontSize = 28;
-export const contentPaddingBottom = 50;
-export const contentPaddingHorizontal = 30;
-
-export const contentPadding = `
-  padding: 0 ${getSizeWrtWidth(contentPaddingHorizontal)} ${getSizeWrtWidth(contentPaddingBottom)} ${getSizeWrtWidth(contentPaddingHorizontal)};
-`;
+export const tableRowHeight = getSizeWrtWidth(68);
+export const tableRowHeightInPixels = getSizeWrtWidth(68, false);
+export const customersTableHeight = window.innerHeight - headerHeightInPixels - getSizeWrtWidth(50, false); // 50 = bottom margin
+export const customersListTableHeight = window.innerHeight - headerHeightInPixels - tableRowHeightInPixels - getSizeWrtWidth(50, false); // 50 = bottom margin
 
 export const textOverflowEllipsis = `
   text-overflow: ellipsis;

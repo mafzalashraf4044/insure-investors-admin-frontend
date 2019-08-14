@@ -3,6 +3,7 @@ import styled from 'styled-components';
 //  constants
 import {
   spacerLg,
+  tableRowHeight,
 } from 'constants/styles';
 
 //  utils
@@ -18,7 +19,7 @@ export const THead = styled.thead`
 `;
 
 export const Tr = styled.tr`
-  height: ${getSizeWrtWidth(68)};
+  height: ${tableRowHeight};
   box-shadow: ${props => props.expanded ? 'inset 0 0 0 1px #e1e5e9' : 'inset 0 1px 0 0 #e1e5e9'};
 
   &:hover {

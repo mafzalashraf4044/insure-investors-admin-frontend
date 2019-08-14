@@ -75,13 +75,17 @@ export const CustomerName = styled.span`
   color: #0f203f;
   font-weight: 400;
   text-align: left;
+  margin: ${spacerXs} 0;
 `;
 
 export const CustomerSubText = styled.span`
   font-size: ${getSizeWrtWidth(14)};
-  color: #00a8d2;
+  color: ${props => props.color};
   font-weight: 400;
-  text-align: left;
+`;
+
+export const PolicyStatus = styled.div`
+  ${flexColumnFsFs}
 `;
 
 export const Actions = styled.div`

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 //  icons
 import Customers from 'components/common/icons/Customers';
