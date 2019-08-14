@@ -9,7 +9,11 @@ import {
   DescriptionListTitle,
 } from './styled';
 
-export default ({title, data, renderListItem}) => {
+export default ({
+  title,
+  data,
+  renderListItem
+}) => {
 
   const renderListItems = () => {
     if (isArray(data)) {

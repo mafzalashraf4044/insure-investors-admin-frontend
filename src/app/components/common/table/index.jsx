@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+//  styled components
 import {
   Table,
   THead,
@@ -11,9 +12,11 @@ import {
   ExpandableTd,
 } from './styled';
 
-import {Animated} from 'react-animated-css';
-
-export default ({columns, data, renderRowDetails}) => {
+export default ({
+  columns,
+  data,
+  renderRowDetails
+}) => {
   const [hoveredRowIndex, setHoveredRowIndex] = useState(-1);
   const [expandedRowIndex, setExpandedRowIndex] = useState(-1);
 
@@ -45,7 +48,7 @@ export default ({columns, data, renderRowDetails}) => {
                     <Td key={iCol}>
                       {
                         !column.isActions ?
-                        column.render(row) :
+                        column.render(row, iRow === hoveredRowIndex) :
                         column.render(row, iRow === hoveredRowIndex, () => setExpandedRowIndex(expandedRowIndex === -1 ? iRow : -1))
                       }
                     </Td>

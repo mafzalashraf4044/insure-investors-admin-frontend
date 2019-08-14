@@ -1,14 +1,22 @@
 import React from 'react';
 
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
-import Select from '@material-ui/core/Select';
-
+//  styled components
 import {
   FormControl,
 } from './styled'
 
-export default ({label, key, value, handleChange, data}) => {
+//  third party components
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+
+export default ({
+  label,
+  key,
+  value,
+  handleChange,
+  data
+}) => {
   return (
     <FormControl>
       <InputLabel>{label}</InputLabel>

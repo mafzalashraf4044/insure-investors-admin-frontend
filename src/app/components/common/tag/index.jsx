@@ -6,7 +6,10 @@ import {
   TagText,
 } from './styled';
 
-export default ({children, bgColor}) => {
+export default ({
+  children,
+  bgColor
+}) => {
   return (
     <Tag bgColor={bgColor}>
       <TagText>{children}</TagText>

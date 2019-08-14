@@ -3,7 +3,7 @@ import MaterialFormControl from '@material-ui/core/FormControl';
 
 //  constants
 import {
-  flexCC,
+  spacerSm,
 } from 'constants/styles';
 
 //  utils
@@ -11,7 +11,7 @@ import {getSizeWrtWidth} from 'utils/styles';
   
 export const FormControl = styled(MaterialFormControl)`
   width: 100%;
-  margin-bottom: ${getSizeWrtWidth(10)}!important;
+  margin-bottom: ${spacerSm}!important;
   
   .MuiInputLabel-root {
     font-size: ${getSizeWrtWidth(14)};

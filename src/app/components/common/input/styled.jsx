@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 
+//  constants
+import {
+  spacerSm,
+} from 'constants/styles';
+
 //  utils
 import {getSizeWrtWidth} from 'utils/styles';
   
 export const Input = styled(TextField)`
   width: 100%;
-  margin-bottom: ${getSizeWrtWidth(10)}!important;
+  margin-bottom: ${spacerSm}!important;
 
   .MuiFormLabel-root {
     font-size: ${getSizeWrtWidth(14)};
