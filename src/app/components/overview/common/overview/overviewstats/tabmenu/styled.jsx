@@ -42,7 +42,7 @@ export const DropdownButton = styled.button`
 
 export const Menu = styled(MaterialMenu)`
   .MuiMenuItem-root {
-    min-height: ${getSizeWrtWidth(34)};
+    min-height: ${getSizeWrtWidth(38)};
   }
 `;
 

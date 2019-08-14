@@ -21,7 +21,7 @@ export const DashboardDetailTabs = styled.div`
   ${flexSbC}
   width: 100%;
   height: ${getSizeWrtWidth(45)};
-  border: 1px solid #e1e5e9;
+  border-bottom: 1px solid #e1e5e9;
 `;
 
 export const DashboardDetailTab = styled.div`
@@ -29,7 +29,7 @@ export const DashboardDetailTab = styled.div`
   flex: 1;
   height: 100%;
   cursor: pointer;
-  border-bottom: ${props => props.active ? '4px solid #03105c' : 'none'};
+  border-bottom: 4px solid ${props => props.active ? '#03105c' : 'transparent'};
 `;
 
 export const DashboardDetailTabText = styled.div`

@@ -21,7 +21,7 @@ export const spacerXl = getSizeWrtWidth(50);
 
 export const headerHeight = getSizeWrtWidth(128); //string with px suffix
 export const headerHeightInPixels = getSizeWrtWidth(128, false);
-export const overviewHeight = window.innerHeight - headerHeightInPixels;
+export const overviewHeight = window.innerHeight - headerHeightInPixels - getSizeWrtWidth(50, false);;
 export const overviewStatsHeight = getSizeWrtWidth(140);
 export const overviewStatsHeightInPixels = getSizeWrtWidth(140, false);
 export const portfolioSummaryHeight = window.innerHeight - headerHeightInPixels - overviewStatsHeightInPixels - getSizeWrtWidth(145, false); //145 = heading and padding

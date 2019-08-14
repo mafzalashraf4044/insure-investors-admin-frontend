@@ -28,7 +28,7 @@ export const CustomersListTabActiveBorder = styled.div`
   ${flexFsC}
   display: inline-flex;
   padding-right: ${spacerMd};
-  border-bottom: ${props => props.active ? '4px solid #03105c;' : 'none'}; 
+  border-bottom: 4px solid ${props => props.active ? '#03105c' : 'transparent'};
 `;
 
 export const CustomersListTabTitle = styled.h2`
