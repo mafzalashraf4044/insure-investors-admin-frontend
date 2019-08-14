@@ -6,13 +6,13 @@ import {
   HeaderLeft,
   Title,
   HeaderRight,
-  AddNewButton,
-  AaddNewButtonText,
   DropdownButton,
   Menu,
   MenuItem,
   DropdownCaretIcon,
 } from './styled';
+
+import Button from 'components/common/button';
 
 export default () => {
 
@@ -35,8 +35,12 @@ export default () => {
       </HeaderLeft>
 
       <HeaderRight>
-        <AddNewButton type="button">
-          <AaddNewButtonText>Add New</AaddNewButtonText>
+        <Button
+          text="Add New"
+          bgColor="#dc248d"
+          borderColor="#dc248d"
+          textColor="#FFF"
+        >
           <DropdownButton
             aria-haspopup="true"
             aria-controls="add-new-menu"
@@ -44,7 +48,7 @@ export default () => {
           >
             <DropdownCaretIcon />
           </DropdownButton>
-        </AddNewButton>
+        </Button>
         <Menu
           id="add-new-menu"
           anchorEl={anchorEl}

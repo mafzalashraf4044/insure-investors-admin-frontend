@@ -11,8 +11,9 @@ import {
   FilterButton,
   FilterIcon,
   HeaderRight,
-  NewCustomerButton
 } from './styled';
+
+import Button from 'components/common/button';
 
 export default ({toggleSidebar}) => {
 
@@ -35,9 +36,13 @@ export default ({toggleSidebar}) => {
       </HeaderLeft>
 
       <HeaderRight>
-        <NewCustomerButton type="button" onClick={toggleSidebar}>
-          <span>New Customer</span>
-        </NewCustomerButton>
+        <Button
+          text="New Customer"
+          bgColor="#dc248d"
+          borderColor="#dc248d"
+          textColor="#FFF"
+          onClick={toggleSidebar}
+        />
       </HeaderRight>
 
     </Header>

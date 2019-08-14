@@ -95,24 +95,3 @@ export const FilterIcon = styled(Filter)`
 
 
 export const HeaderRight = styled.div``;
-
-export const NewCustomerButton = styled.button`
-  ${flexCC}
-  width: ${getSizeWrtWidth(153)};
-  height: 46px;
-  border-radius: 4px;
-  background-color: #dc248d;
-  border: none;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-
-  span {
-    font-size: ${getSizeWrtWidth(14)};
-    color: #FFF;
-    font-family: "Raleway";
-    font-weight: 600;
-  }
-`;

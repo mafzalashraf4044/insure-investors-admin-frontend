@@ -39,34 +39,6 @@ export const Title = styled.h1`
 
 export const HeaderRight = styled.div``;
 
-export const AddNewButton = styled.button`
-  ${flexSbC}
-  width: ${getSizeWrtWidth(152)};
-  height: ${getSizeWrtWidth(46)};
-  border-radius: 4px;
-  background-color: #dc248d;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-
-  &:focus {
-    outline: none;
-  }
-
-  span {
-    font-size: ${getSizeWrtWidth(14)};
-    color: #FFF;
-    font-family: "Raleway";
-    font-weight: 600;
-  }
-`;
-
-export const AaddNewButtonText = styled.span`
-  ${flexCC}  
-  flex: 1;
-`;
-
 export const DropdownButton = styled.button`
   ${flexCC}  
   width: ${getSizeWrtWidth(46)};
@@ -75,7 +47,7 @@ export const DropdownButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  margin: 0;
+  margin: 0 -${getSizeWrtWidth(20)} 0 ${getSizeWrtWidth(20)};
   border-left: 1px solid #f4f4f4;
 
   &:focus {
