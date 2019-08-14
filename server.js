@@ -17,6 +17,9 @@ app.get('/fonts/*.ttf', (req, res) => {
 app.get('/images/*.png', (req, res) => {
   res.sendFile(path.join(__dirname, `dist/images/${path.basename(req.url)}`));
 });
+app.get('/images/*.jpg', (req, res) => {
+  res.sendFile(path.join(__dirname, `dist/images/${path.basename(req.url)}`));
+});
 app.get('/images/*.ico', (req, res) => {
   res.sendFile(path.join(__dirname, `dist/images/${path.basename(req.url)}`));
 });

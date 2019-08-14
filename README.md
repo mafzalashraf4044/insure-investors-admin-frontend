@@ -8,3 +8,4 @@
 - npm install
 - npm run prod
 - node server.js
+- visit localhost:4000
