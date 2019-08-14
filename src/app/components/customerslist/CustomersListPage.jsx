@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-//  Custom Components
+//  custom components
 import Page from 'components/common/layout/page';
 import LeftSidebar from 'components/common/layout/leftsidebar';
 import PageContent from 'components/common/layout/pagecontent';

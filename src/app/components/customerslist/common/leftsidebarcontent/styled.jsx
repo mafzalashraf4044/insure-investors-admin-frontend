@@ -9,7 +9,12 @@ import Lead from 'components/common/icons/Lead';
 //  constants
 import {
   headerHeight,
-  contentPadding,
+  spacerXs,
+  spacerSm,
+  spacerSm2x,
+  spacerMd,
+  spacerLg,
+  spacerXl,
   flexSbC,
   flexFsFs,
   flexFsC,
@@ -21,7 +26,7 @@ import {
 import {getSizeWrtWidth} from 'utils/styles'
 
 export const Content = styled.div`
-  ${contentPadding}
+  padding: 0 ${spacerLg} ${spacerXl} ${spacerLg};
 `;
 
 export const Header = styled.div`
@@ -39,15 +44,15 @@ export const Title = styled.h1`
 
 export const MainItems = styled.div`
   ${flexColumnFsC}
-  margin-bottom: ${getSizeWrtWidth(50)};
+  margin-bottom: ${spacerXl};
 `;
   
 export const MainItem = styled.div`
   ${flexFsFs}
   width: 100%;
   border-bottom: 1px solid #293373;
-  margin-bottom: ${getSizeWrtWidth(15)};
-  padding-bottom: ${getSizeWrtWidth(15)};
+  margin-bottom: ${spacerMd};
+  padding-bottom: ${spacerMd};
 `;
 
 export const CustomersIcon = styled(Customers)`
@@ -78,7 +83,7 @@ export const LeadIcon = styled(Lead)`
 `;
 
 export const MainItemRight = styled.div`
-  margin-left: ${getSizeWrtWidth(15)};
+  margin-left: ${spacerMd};
 `;
 
 export const MainItemTitle = styled.p`
@@ -105,7 +110,7 @@ export const ListItem = styled.li`
   ${flexSbC}
   width: 100%;
   min-height: ${getSizeWrtWidth(34)};
-  margin-bottom: ${props => props.withMarginBottom ? getSizeWrtWidth(15) : '0px'};
+  margin-bottom: ${props => props.withMarginBottom ? spacerMd : '0px'};
 `;
 
 export const ListItemLeft = styled.div`
@@ -122,7 +127,7 @@ export const ListItemTitle = styled.p`
   font-size: ${getSizeWrtWidth(14)};
   color: #8187ad;
   font-weight: 700;
-  margin: 0 0 0 ${getSizeWrtWidth(10)};
+  margin: 0 0 0 ${spacerSm};
 `;
 
 export const ListItemRight = styled.p`

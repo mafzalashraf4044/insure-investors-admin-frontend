@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+//  third party libs
 import {isUndefined} from 'lodash';
 
 //  styled components
@@ -20,24 +21,26 @@ import {
   DepartmentTitle,
   SectionExpandable,
   SectionExpandableHeader,
+  SectionExpandableHeaderLeft,
+  SectionExpandableHeaderRight,
+  AddPolicyButton,
+  AddIcon,
+  AddPolicyButtonText,
   SectionExpandableTitle,
   SectionContentToggleButton,
   AccordionPopupCloseIcon,
   AccordionPopupOpenIcon,
   PolicyInfoItemHeader,
   PolicyInfoItemHeaderTop,
-  PolicyInfoItemId,
+  PolicyInfoItemValue,
+  PolicyInfoItemActionButton,
+  EditIcon,
+  DeleteIcon,
+  PolicyInfoItemType,
   PolicyInfoItemHeaderBottom,
+  ActionButtons,
 } from './styled';
 
-import Sidebar from 'react-sidebar';
-import Collapsible from 'react-collapsible';
-
-import Tag from 'components/common/tag';
-import Input from 'components/common/input';
-import SelectInput from 'components/common/selectinput';
-import Scrollbar from 'components/common/scrollbar';
-import DescriptionList from 'components/common/descriptionlist'; 
 import {
   DescriptionListItem,
   DescriptionListHeader,
@@ -47,9 +50,23 @@ import {
   DescriptionValue
 } from 'components/common/descriptionlist/styled';
 
+//  third party components
+import Sidebar from 'react-sidebar';
+import Collapsible from 'react-collapsible';
+
+//  custom components
+import AddNewPolicy from './addnewpolicy'
+import Tag from 'components/common/tag';
+import Button from 'components/common/button';
+import Input from 'components/common/input';
+import SelectInput from 'components/common/selectinput';
+import Scrollbar from 'components/common/scrollbar';
+import DescriptionList from 'components/common/descriptionlist'; 
+
 const policiesInfo = [
   {
-    id: 1234567,
+    type: 'Automobile',
+    amount: '$2,500',
     details: [
       {title: 'Effective Date', value: '14 Dec 2018'},
       {title: 'Expiration Date', value: '14 Dec 2019'},
@@ -60,7 +77,8 @@ const policiesInfo = [
     ]
   },
   {
-    id: 1234567,
+    type: 'Automobile',
+    amount: '$2,500',
     details: [
       {title: 'Effective Date', value: '14 Dec 2018'},
       {title: 'Expiration Date', value: '14 Dec 2019'},
@@ -72,10 +90,14 @@ const policiesInfo = [
   },
 ];
 
-export default ({open, toggle}) => {
+export default ({
+  open,
+  toggle
+}) => {
 
   const [contactInfoExpanded, setContactInfoExpanded] = useState(false);
   const [policyInfoExpanded, setPolicyInfoExpanded] = useState(false);
+  const [isAddNewPolicyModalOpen, setIsAddNewPolicyModalOpen] = useState(false);
 
   const toggleContactInfo = () => setContactInfoExpanded(!contactInfoExpanded);
   const togglePolicyInfo = () => setPolicyInfoExpanded(!policyInfoExpanded);
@@ -86,10 +108,17 @@ export default ({open, toggle}) => {
         <DescriptionListHeader>
           <PolicyInfoItemHeader>
             <PolicyInfoItemHeaderTop>
-              <PolicyInfoItemId>#{o.id}</PolicyInfoItemId>
-            </PolicyInfoItemHeaderTop>
-            <PolicyInfoItemHeaderBottom>
+              <PolicyInfoItemValue>{o.amount}</PolicyInfoItemValue>
               <Tag bgColor="#00a8d2">New</Tag>
+            </PolicyInfoItemHeaderTop>
+            <PolicyInfoItemType>{o.type}</PolicyInfoItemType>
+            <PolicyInfoItemHeaderBottom>
+              <PolicyInfoItemActionButton>
+                <DeleteIcon />
+              </PolicyInfoItemActionButton>
+              <PolicyInfoItemActionButton>
+                <EditIcon />
+              </PolicyInfoItemActionButton>              
             </PolicyInfoItemHeaderBottom>
           </PolicyInfoItemHeader>
         </DescriptionListHeader>
@@ -217,10 +246,18 @@ export default ({open, toggle}) => {
   
           <SectionExpandable>
             <SectionExpandableHeader expanded={policyInfoExpanded}>
-              <SectionExpandableTitle>Policy/Quote Info</SectionExpandableTitle>
-              <SectionContentToggleButton onClick={togglePolicyInfo}>
-                {policyInfoExpanded ? <AccordionPopupCloseIcon /> : <AccordionPopupOpenIcon />}
-              </SectionContentToggleButton>
+              <SectionExpandableHeaderLeft>
+                <SectionExpandableTitle>Policy/Quote Info</SectionExpandableTitle>
+                <AddPolicyButton onClick={() => setIsAddNewPolicyModalOpen(true)}>
+                  <AddIcon />
+                  <AddPolicyButtonText>Add Policy</AddPolicyButtonText>
+                </AddPolicyButton>
+              </SectionExpandableHeaderLeft>
+              <SectionExpandableHeaderRight>
+                <SectionContentToggleButton onClick={togglePolicyInfo}>
+                  {policyInfoExpanded ? <AccordionPopupCloseIcon /> : <AccordionPopupOpenIcon />}
+                </SectionContentToggleButton>
+              </SectionExpandableHeaderRight>
             </SectionExpandableHeader>
             <Collapsible open={policyInfoExpanded}>
               <SectionContent>
@@ -237,22 +274,42 @@ export default ({open, toggle}) => {
               </SectionContent>
             </Collapsible>
           </SectionExpandable>
-
+          <ActionButtons>
+            <Button
+              mR
+              text="Discard"
+              bgColor="#FFF"
+              borderColor="#dc248d"
+              textColor="#dc248d"
+            />
+            <Button
+              text="Save"
+              bgColor="#dc248d"
+              borderColor="#dc248d"
+              textColor="#FFF"
+            />
+          </ActionButtons>
         </AddNewCustomer>
       </Scrollbar>
     );
   };
 
   return (
-    <Sidebar
-      open={open}
-      pullRight={true}
-      onSetOpen={toggle}
-      sidebar={renderAddNewCustomer()}
-      styles={{ 
-        ...(!open && {root: {zIndex: -1}}),
-        sidebar: { background: "white", width: "40%" }
-       }}
-    />
+    <React.Fragment>
+      <Sidebar
+        open={open}
+        pullRight={true}
+        onSetOpen={toggle}
+        sidebar={renderAddNewCustomer()}
+        styles={{ 
+          ...(!open && {root: {zIndex: -1}}),
+          sidebar: { background: "white", width: "40%" }
+         }}
+      />
+      <AddNewPolicy 
+        isOpen={isAddNewPolicyModalOpen}
+        close={() => setIsAddNewPolicyModalOpen(false)}
+      />
+    </React.Fragment>
   );
 };

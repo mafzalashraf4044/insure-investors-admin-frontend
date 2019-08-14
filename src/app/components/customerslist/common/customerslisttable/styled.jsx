@@ -9,6 +9,10 @@ import Delete from 'components/common/icons/Delete';
 
 //  constants
 import {
+  spacerXs,
+  spacerSm,
+  spacerMd,
+  spacerLg,
   flexCC,
   flexSbC,
   flexFsC,
@@ -20,16 +24,44 @@ import {
 import {getSizeWrtWidth} from 'utils/styles'
 
 export const CustomersListTable = styled.div`
-  border-bottom: 1px solid #e1e5e9;
+  margin-right: -${spacerMd};
+`;
+
+export const TableContainer = styled.div`
+  position: relative;
+  padding-right: ${spacerMd};
+
+  &::after {
+    content: "";
+    width: calc(100% - ${spacerMd});
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background: #e1e5e9;
+  }
 `;
 
 export const Customer = styled.div`
   ${flexFsC}
 `;
 
+export const CustomerCheckbox = styled.div`
+  ${flexCC}
+  width: ${getSizeWrtWidth(44)};
+  height: ${getSizeWrtWidth(44)};
+
+  input {
+    width: ${getSizeWrtWidth(16)};
+    height: ${getSizeWrtWidth(16)};
+    border-radius: 3px;
+    background-color: #FFF;
+    border: 1px solid #a9b2b8;
+  }
+`;
+
 export const CustomerImage = styled.img`
-  width: 43px;
-  height: 43px;
+  width: ${getSizeWrtWidth(44)};
+  height: ${getSizeWrtWidth(44)};
   border-radius: 50%;
 `;
 
@@ -56,7 +88,7 @@ export const Actions = styled.div`
   ${flexSbC}
   z-index: 1;
   position: relative;
-  padding-right: ${getSizeWrtWidth(10)};
+  padding-right: ${spacerSm};
 `;
 
 export const ActionsLeft = styled.div`
@@ -113,14 +145,14 @@ export const DeleteIcon = styled(Delete)`
 
 export const RowDetails = styled.div`
   ${flexColumnFsFs}
-  padding: ${getSizeWrtWidth(15)} ${getSizeWrtWidth(30)} 0 ${getSizeWrtWidth(30)};
-  margin-right: ${getSizeWrtWidth(10)};
+  padding: ${spacerMd} ${spacerLg} 0 ${spacerLg};
+  margin-right: ${spacerSm};
 `;
 
 export const RowDetailItems = styled.div`
   ${flexFsFsWrap}
   width: 100%;
-  margin-bottom: ${getSizeWrtWidth(15)}
+  margin-bottom: ${spacerMd}
 `;
 
 export const RowDetailItem = styled.div`
@@ -132,7 +164,7 @@ export const RowDetailItemTitle = styled.p`
   font-size: ${getSizeWrtWidth(12)};
   color: #868b96;
   font-weight: 700;
-  margin: 0 0 ${getSizeWrtWidth(10)} 0;
+  margin: 0 0 ${spacerSm} 0;
 `;
 
 export const RowDetailItemValue = styled.p`
@@ -142,18 +174,15 @@ export const RowDetailItemValue = styled.p`
   margin: 0;
 `;
 
-export const SubmissionItemHeader = styled.div`
+export const SubmissionItemHeader = styled.div``;
 
-`;
-
-export const SubmissionItemHeaderTop = styled.div`%;
-`;
+export const SubmissionItemHeaderTop = styled.div``;
 
 export const SubmissionItemId = styled.div`
   font-size: ${getSizeWrtWidth(18)};
   color: #525c6e;
   font-weight: 700;
-  margin: 0 0 ${getSizeWrtWidth(5)} 0;
+  margin: 0 0 ${spacerXs} 0;
 `;
 
 export const SubmissionItemHeaderBottom = styled.div`

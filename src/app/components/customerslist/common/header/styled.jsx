@@ -7,6 +7,9 @@ import Filter from 'components/common/icons/Filter';
 //  constants
 import {
   headerHeight,
+  spacerSm,
+  spacerMd,
+  spacerLg,
   flexSbC,
   flexCC,
   flexFsC,
@@ -30,7 +33,7 @@ export const Title = styled.h1`
   line-height: ${getSizeWrtWidth(28)};
   color: #03105c;
   font-weight: 800;
-  margin: 0 ${getSizeWrtWidth(30)} 0 0;
+  margin: 0 ${spacerLg} 0 0;
 `;
 
 export const SearchBox = styled.div`
@@ -39,8 +42,8 @@ export const SearchBox = styled.div`
   height: 34px;
   border-radius: 6px;
   border: 1px solid #d5d5d5;
-  padding: 0 ${getSizeWrtWidth(10)};
-  margin: 0 ${getSizeWrtWidth(15)};
+  padding: 0 ${spacerSm};
+  margin: 0 ${spacerMd};
 `;
 
 export const SearchIcon = styled(Search)`
@@ -55,7 +58,7 @@ export const SearchIcon = styled(Search)`
 export const SearchInput = styled.input`
   border: none;
   width: 100%;
-  margin-left: ${getSizeWrtWidth(10)};
+  margin-left: ${spacerSm};
 
   &:focus {
     outline: none;
@@ -67,7 +70,7 @@ export const FilterButton = styled.button`
   width: ${getSizeWrtWidth(88)};
   height: 34px;
   border-radius: 6px;
-  background-color: rgba(3,16,92,0.050980392156862744);
+  background-color: rgba(3,16,92,0.05);
   border: 1px solid #d5d5d5;
   padding: 0;
   cursor: pointer;
@@ -80,7 +83,7 @@ export const FilterButton = styled.button`
     font-size: ${getSizeWrtWidth(14)};
     color: #858585;
     font-weight: 400;
-    margin-left: ${getSizeWrtWidth(10)};
+    margin-left: ${spacerSm};
   }
 `;
 

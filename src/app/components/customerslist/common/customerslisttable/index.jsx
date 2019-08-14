@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 
+//  third party libs
 import {isUndefined} from 'lodash';
 
+//  styled components
 import {
   CustomersListTable,
+  TableContainer,
   Customer,
+  CustomerCheckbox,
   CustomerImage,
   CustomerText,
   CustomerName,
@@ -29,11 +33,6 @@ import {
   SubmissionItemHeaderBottom
 } from './styled';
 
-import Tag from 'components/common/tag';
-import Table from 'components/common/table';
-import Collapsible from 'react-collapsible';
-import Scrollbar from 'components/common/scrollbar';
-import DescriptionList from 'components/common/descriptionlist'; 
 import {
   DescriptionListItem,
   DescriptionListHeader,
@@ -43,7 +42,15 @@ import {
   DescriptionValue
 } from 'components/common/descriptionlist/styled';
 
+//  third party components
 import {Animated} from 'react-animated-css';
+import Collapsible from 'react-collapsible';
+
+//  custom components
+import Tag from 'components/common/tag';
+import Table from 'components/common/table';
+import Scrollbar from 'components/common/scrollbar';
+import DescriptionList from 'components/common/descriptionlist'; 
 
 //  constants
 import {
@@ -116,9 +123,15 @@ const submissions = [
 
 export default () => {
 
-  const renderCustomer = (o) => (
+  const renderCustomer = (o, hover) => (
     <Customer>
-      <CustomerImage src={require('assets/images/profile-image.jpg')} alt="profile image" />
+      {
+        hover ?
+        <CustomerCheckbox>
+          <input type="checkbox" />
+        </CustomerCheckbox> :
+        <CustomerImage src={require('assets/images/profile-image.jpg')} alt="profile image" />
+      }
       
       <CustomerText>
         <CustomerName>{o.name}</CustomerName>
@@ -282,11 +295,13 @@ export default () => {
         thumbColor="#E7F1F3"
         height={tableHeight}
       >
-        <Table
-          data={data}
-          columns={columns}
-          renderRowDetails={renderRowDetails}
-        />
+        <TableContainer>
+          <Table
+            data={data}
+            columns={columns}
+            renderRowDetails={renderRowDetails}
+          />
+        </TableContainer>
       </Scrollbar>
     </CustomersListTable>
   );

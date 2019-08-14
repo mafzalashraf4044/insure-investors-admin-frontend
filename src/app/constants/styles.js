@@ -26,7 +26,7 @@ export const overviewStatsHeight = getSizeWrtWidth(140);
 export const overviewStatsHeightNumeric = getSizeWrtWidth(140, false);
 export const portfolioSummaryHeight = window.innerHeight - headerHeightNumeric - overviewStatsHeightNumeric - getSizeWrtWidth(145, false); //header and padding
 export const dashboardDetailsHeight = window.innerHeight - headerHeightNumeric - overviewStatsHeightNumeric - getSizeWrtWidth(145, false); //header and padding
-export const tableHeight = window.innerHeight - getSizeWrtWidth(headerHeight + contentPaddingBottom, false);
+export const tableHeight = window.innerHeight - getSizeWrtWidth(128 + 50, false);
 
 
 
@@ -147,3 +147,16 @@ export const flexColumnCFs = `
   justify-content: center;
   align-items: flex-start;
 `;
+
+export const flexFeC = `
+  ${flex}
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+export const flexColumnFeC = `
+  ${flexColumn}
+  justify-content: flex-end;
+  align-items: center;
+`;
+
